@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //setting up vertical and horizontal movement
         verticalMovement = Input.GetAxis("Vertical");
@@ -43,6 +43,14 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Platform"))
         {
             onGround = true;
+        }
+        else if (collision.gameObject.CompareTag("Box"))
+        {
+            onGround = true;
+        }
+        else if (collision.gameObject.CompareTag("Laser"))
+        {
+            Destroy(gameObject);
         }
     }
 }
