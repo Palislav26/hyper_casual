@@ -11,14 +11,14 @@ public class LaserController : MonoBehaviour
 
     public float secondTillDestruction = 10f;
 
-    public float spawnTime;
-    public float spawnDelay;
+    [SerializeField]float spawnTime;
+    [SerializeField]float spawnDelay;
 
     // Start is called before the first frame update
     void Start()
     {
         spawnPosition = new Vector3(-3, 0.5f, Random.Range(-30, -80));
-        InvokeRepeating("RespawnLaser", spawnTime, spawnDelay);
+        InvokeRepeating("SpawnLaser", spawnTime, spawnDelay);
         StartCoroutine("DestroyLaser");
     }
 
@@ -28,7 +28,7 @@ public class LaserController : MonoBehaviour
         transform.position = new Vector3(laser.transform.position.x, laser.transform.position.y, laser.transform.position.z + speed);
     }
 
-    public void RespawnLaser()
+    public void SpawnLaser()
     {
         Instantiate(laser, spawnPosition, laser.transform.rotation);
 

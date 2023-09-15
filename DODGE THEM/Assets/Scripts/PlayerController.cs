@@ -52,5 +52,9 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        else if (collision.gameObject.CompareTag("DeadZone"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
