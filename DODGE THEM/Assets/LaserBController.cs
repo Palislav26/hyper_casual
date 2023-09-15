@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LaserController : MonoBehaviour
+public class LaserBController : MonoBehaviour
 {
     Vector3 spawnPosition;
-    public GameObject laser;  
+    public GameObject laser;
     public Transform transform;
     float speed = 0.05f;
 
@@ -17,7 +17,7 @@ public class LaserController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnPosition = new Vector3(-3, 0.5f, Random.Range(-30, -80));
+        spawnPosition = new Vector3(Random.Range(30, 80), 0.7f, 1.5f);
         InvokeRepeating("RespawnLaser", spawnTime, spawnDelay);
         StartCoroutine("DestroyLaser");
     }
@@ -25,7 +25,7 @@ public class LaserController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(laser.transform.position.x, laser.transform.position.y, laser.transform.position.z + speed);
+        transform.position = new Vector3(laser.transform.position.x - speed, laser.transform.position.y, laser.transform.position.z);
     }
 
     public void RespawnLaser()
