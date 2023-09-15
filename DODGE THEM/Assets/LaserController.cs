@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class LaserController : MonoBehaviour
 {
-    public GameObject laser;
     Vector3 spawnPosition;
+    public GameObject laser;  
     public Transform transform;
+
     float speed = 0.05f;
+    public float secondTillDestruction = 10f;
 
     public float spawnTime;
     public float spawnDelay;
@@ -17,6 +19,7 @@ public class LaserController : MonoBehaviour
     {
         spawnPosition = new Vector3(-3, 0.5f, -30);
         InvokeRepeating("RespawnLaser", spawnTime, spawnDelay);
+        StartCoroutine("DestroyLaser");
     }
 
     // Update is called once per frame
@@ -29,5 +32,11 @@ public class LaserController : MonoBehaviour
     {
         Instantiate(laser, spawnPosition, laser.transform.rotation);
 
+    }
+
+    IEnumerator DestroyLaser()
+    {
+        yield return new WaitForSeconds(secondTillDestruction);
+        Destroy(laser);
     }
 }
