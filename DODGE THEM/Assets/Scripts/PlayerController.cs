@@ -5,14 +5,21 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     //declaring esential variables
+    //public static PlayerController instance;
     Rigidbody rb;
     float verticalMovement;
     float horizontalMovement;
     //SF allows us to modify these two variables direcly throgh inspector
     [SerializeField]float speed = 5f;
     [SerializeField]float jumpHeight = 10f;
+    [SerializeField]float normalStrength;
 
     public bool onGround;
+
+    /*private void Awake()
+    {
+        instance = this;
+    }*/
 
     // Start is called before the first frame update
     void Start()
@@ -38,23 +45,31 @@ public class PlayerController : MonoBehaviour
     }
 
     //detecs if player collides with the platform
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision other)
     {
-        if (collision.gameObject.CompareTag("Platform"))
+        if (other.gameObject.CompareTag("Platform"))
         {
             onGround = true;
         }
-        else if (collision.gameObject.CompareTag("Box"))
+        else if (other.gameObject.CompareTag("Box"))
         {
             onGround = true;
         }
-        else if (collision.gameObject.CompareTag("Laser"))
+        else if (other.gameObject.CompareTag("Laser"))
         {
             Destroy(gameObject);
         }
-        else if (collision.gameObject.CompareTag("DeadZone"))
+        else if (other.gameObject.CompareTag("DeadZone"))
         {
             Destroy(gameObject);
         }
+        /*else if (other.gameObject.CompareTag("Enemy"))
+        {
+            Rigidbody enemyRigidbody = other.gameObject.GetComponent<Rigidbody>();
+            Vector3 awayFromPlayer = transform.position - other.gameObject.transform.position;
+                  
+            enemyRigidbody.AddForce(awayFromPlayer * normalStrength, ForceMode.Impulse);
+            
+        }*/
     }
 }
