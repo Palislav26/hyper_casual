@@ -57,19 +57,22 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Laser"))
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
         else if (other.gameObject.CompareTag("DeadZone"))
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
-        /*else if (other.gameObject.CompareTag("Enemy"))
+        else if (other.gameObject.CompareTag("Enemy"))
         {
             Rigidbody enemyRigidbody = other.gameObject.GetComponent<Rigidbody>();
             Vector3 awayFromPlayer = transform.position - other.gameObject.transform.position;
-                  
+
             enemyRigidbody.AddForce(awayFromPlayer * normalStrength, ForceMode.Impulse);
-            
-        }*/
+
+            Vector3 awayFromEnemy = other.gameObject.transform.position - transform.position;
+
+            rb.AddForce(awayFromEnemy * normalStrength, ForceMode.Impulse);
+        }
     }
 }
