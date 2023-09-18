@@ -55,11 +55,11 @@ public class PlayerController : MonoBehaviour
         {
             onGround = true;
         }
-        else if (other.gameObject.CompareTag("Laser"))
+        else if(other.gameObject.CompareTag("DeadZone"))
         {
             gameObject.SetActive(false);
         }
-        else if (other.gameObject.CompareTag("DeadZone"))
+        else if (other.gameObject.CompareTag("Laser"))
         {
             gameObject.SetActive(false);
         }
