@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
 
     public bool onGround;
 
+    public ScoreSystem scoreSystem;
+
     /*private void Awake()
     {
         instance = this;
@@ -41,7 +43,9 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector3(rb.velocity.x, jumpHeight, rb.velocity.z);
             onGround = false;
+            scoreSystem.AddScore(1);
         }
+
     }
 
     //detecs if player collides with the platform
