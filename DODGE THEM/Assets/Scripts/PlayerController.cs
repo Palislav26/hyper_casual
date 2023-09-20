@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour
 
     public ScoreSystem scoreSystem;
 
+    public float radius;
+    public float explosionPower;
+
     /*private void Awake()
     {
         instance = this;
@@ -44,6 +47,10 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, jumpHeight, rb.velocity.z);
             onGround = false;
             scoreSystem.AddScore(1);
+        }
+        else if (Input.GetKeyDown(KeyCode.Q))
+        {
+            ShockWave();
         }
 
     }
@@ -77,6 +84,22 @@ public class PlayerController : MonoBehaviour
             Vector3 awayFromEnemy = other.gameObject.transform.position - transform.position;
 
             rb.AddForce(awayFromEnemy * normalStrength, ForceMode.Impulse);
+        }
+    }
+
+    public void ShockWave()
+    {
+        Vector3 explosionPosition = transform.position;
+        Collider[] colliders = Physics.OverlapSphere(explosionPosition, radius);
+
+        foreach(Collider hit in colliders)
+        {
+            Rigidbody rb = hit.GetComponent<Rigidbody>();
+
+            if (rb != null)
+            {
+                rb.AddExplosionForce(explosionPower, explosionPosition, radius, 3.0f);
+            }
         }
     }
 }

@@ -129,4 +129,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   jumpHeight: 10
+  normalStrength: 0
   onGround: 0
+  scoreSystem: {fileID: 0}
