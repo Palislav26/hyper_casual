@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
 
     public float radius;
     public float explosionPower;
+    public GameObject bluePill;
 
     /*private void Awake()
     {
@@ -47,12 +48,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, jumpHeight, rb.velocity.z);
             onGround = false;
             scoreSystem.AddScore(1);
-        }
-        else if (Input.GetKeyDown(KeyCode.Q))
-        {
-            ShockWave();
-        }
-
+        }      
     }
 
     //detecs if player collides with the platform
@@ -84,6 +80,11 @@ public class PlayerController : MonoBehaviour
             Vector3 awayFromEnemy = other.gameObject.transform.position - transform.position;
 
             rb.AddForce(awayFromEnemy * normalStrength, ForceMode.Impulse);
+        }
+        else if (other.gameObject.CompareTag("BluePill"))
+        {
+            ShockWave();
+            Destroy(bluePill);
         }
     }
 

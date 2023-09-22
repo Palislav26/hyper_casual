@@ -9,6 +9,7 @@ TagManager:
   - Laser
   - DeadZone
   - Enemy
+  - BluePill
   layers:
   - Default
   - TransparentFX
