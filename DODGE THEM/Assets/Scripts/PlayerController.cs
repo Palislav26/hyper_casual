@@ -21,6 +21,11 @@ public class PlayerController : MonoBehaviour
     public float radius;
     public float explosionPower;
     public GameObject bluePill;
+    public GameObject redPill;
+
+    public int maxHealth = 5;
+    public int currentHealth;
+    public HealthBar healthBar;
 
     /*private void Awake()
     {
@@ -31,6 +36,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -48,7 +55,23 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, jumpHeight, rb.velocity.z);
             onGround = false;
             scoreSystem.AddScore(1);
-        }      
+        }
+
+        KillThePlayer();
+    }
+
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
+    }
+
+    void KillThePlayer()
+    {
+        if(currentHealth <= 0)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     //detecs if player collides with the platform
@@ -64,14 +87,16 @@ public class PlayerController : MonoBehaviour
         }
         else if(other.gameObject.CompareTag("DeadZone"))
         {
-            gameObject.SetActive(false);
+            TakeDamage(5);
         }
         else if (other.gameObject.CompareTag("Laser"))
         {
-            gameObject.SetActive(false);
+            TakeDamage(1);
         }
         else if (other.gameObject.CompareTag("Enemy"))
         {
+            TakeDamage(1);
+
             Rigidbody enemyRigidbody = other.gameObject.GetComponent<Rigidbody>();
             Vector3 awayFromPlayer = transform.position - other.gameObject.transform.position;
 
@@ -85,6 +110,12 @@ public class PlayerController : MonoBehaviour
         {
             ShockWave();
             Destroy(bluePill);
+        }
+        else if (other.gameObject.CompareTag("RedPill"))
+        {
+            currentHealth += 1;
+            healthBar.SetHealth(currentHealth);
+            Destroy(redPill);
         }
     }
 

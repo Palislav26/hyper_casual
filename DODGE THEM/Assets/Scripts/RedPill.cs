@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BluePill : MonoBehaviour
+public class RedPill : MonoBehaviour
 {
-    public GameObject bluePill;
+    public GameObject redPill;
     public Transform pillTransform;
     Rigidbody rb;
 
@@ -16,15 +16,13 @@ public class BluePill : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnTime = Random.Range(10, 20);
-        spawnDelay = Random.Range(20, 30);
+        spawnTime = Random.Range(30, 50);
+        spawnDelay = Random.Range(30, 50);
 
         for (int i = 0; i < 1; i++)
         {
             InvokeRepeating("SpawnPill", spawnTime, spawnDelay);
         }
-
-        //rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -35,7 +33,7 @@ public class BluePill : MonoBehaviour
 
     public void SpawnPill()
     {
-        Instantiate(bluePill, spawnPosition, pillTransform.rotation);
+        Instantiate(redPill, spawnPosition, pillTransform.rotation);
 
     }
 
@@ -43,8 +41,7 @@ public class BluePill : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("DeadZone"))
         {
-            Destroy(bluePill);
-        }      
+            Destroy(redPill);
+        }
     }
 }
-
