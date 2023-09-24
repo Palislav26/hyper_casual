@@ -20,8 +20,6 @@ public class PlayerController : MonoBehaviour
 
     public float radius;
     public float explosionPower;
-    public GameObject bluePill;
-    public GameObject redPill;
 
     public int maxHealth = 5;
     public int currentHealth;
@@ -71,6 +69,7 @@ public class PlayerController : MonoBehaviour
         if(currentHealth <= 0)
         {
             gameObject.SetActive(false);
+            ShockWave();
         }
     }
 
@@ -109,13 +108,13 @@ public class PlayerController : MonoBehaviour
         else if (other.gameObject.CompareTag("BluePill"))
         {
             ShockWave();
-            Destroy(bluePill);
+            //Destroy(bluePill);
         }
         else if (other.gameObject.CompareTag("RedPill"))
         {
             currentHealth += 1;
             healthBar.SetHealth(currentHealth);
-            Destroy(redPill);
+            //Destroy(redPill);
         }
     }
 

@@ -5,8 +5,8 @@ using UnityEngine;
 public class RedPill : MonoBehaviour
 {
     public GameObject redPill;
+    private GameObject newInstance;
     public Transform pillTransform;
-    Rigidbody rb;
 
     Vector3 spawnPosition;
     float spawnTime;
@@ -33,13 +33,17 @@ public class RedPill : MonoBehaviour
 
     public void SpawnPill()
     {
-        Instantiate(redPill, spawnPosition, pillTransform.rotation);
+        newInstance = Instantiate(redPill, spawnPosition, pillTransform.rotation);
 
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("DeadZone"))
+        {
+            Destroy(redPill);
+        }
+        if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(redPill);
         }

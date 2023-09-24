@@ -6,7 +6,7 @@ public class BluePill : MonoBehaviour
 {
     public GameObject bluePill;
     public Transform pillTransform;
-    Rigidbody rb;
+    private GameObject newIstance;
 
     Vector3 spawnPosition;
     float spawnTime;
@@ -23,8 +23,6 @@ public class BluePill : MonoBehaviour
         {
             InvokeRepeating("SpawnPill", spawnTime, spawnDelay);
         }
-
-        //rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -35,8 +33,7 @@ public class BluePill : MonoBehaviour
 
     public void SpawnPill()
     {
-        Instantiate(bluePill, spawnPosition, pillTransform.rotation);
-
+        newIstance = Instantiate(bluePill, spawnPosition, pillTransform.rotation);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -44,7 +41,11 @@ public class BluePill : MonoBehaviour
         if (collision.gameObject.CompareTag("DeadZone"))
         {
             Destroy(bluePill);
-        }      
+        }
+        else if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(bluePill);
+        }
     }
 }
 
