@@ -25,6 +25,12 @@ public class PlayerController : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBar;
 
+    private float immortalityTimer;
+    public float immortalityLenght;
+    public MeshRenderer playerMR;
+    private float flashTimer;
+    public float flashLenght = 0.1f;
+
     /*private void Awake()
     {
         instance = this;
@@ -56,12 +62,39 @@ public class PlayerController : MonoBehaviour
         }
 
         KillThePlayer();
+
+        if(immortalityTimer > 0)
+        {
+            immortalityTimer -= Time.deltaTime;
+            flashTimer -= Time.deltaTime;
+
+            if(flashTimer <= 0)
+            {
+                playerMR.enabled = !playerMR.enabled;
+                flashTimer = flashLenght;
+            }
+
+            if(immortalityTimer <= 0)
+            {
+                playerMR.enabled = true;
+            }
+
+        }
     }
 
     void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
+    {       
+        if(immortalityTimer <= 0)
+        {
+            currentHealth -= damage;
+            healthBar.SetHealth(currentHealth);
+
+            immortalityTimer = immortalityLenght;
+
+            playerMR.enabled = false;
+            flashTimer = flashLenght;
+        }
+                                 
     }
 
     void KillThePlayer()
