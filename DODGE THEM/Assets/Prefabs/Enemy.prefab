@@ -115,6 +115,7 @@ MonoBehaviour:
   player: {fileID: 0}
   enemy: {fileID: 4334498197715496694}
   enemyTransform: {fileID: 6521458665316551851}
+  scoreSystem: {fileID: 0}
   moveSpeed: 3
   rangeToChace: 15
 --- !u!54 &8411615035230822706

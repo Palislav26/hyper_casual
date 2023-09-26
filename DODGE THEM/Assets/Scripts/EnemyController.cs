@@ -11,6 +11,8 @@ public class EnemyController : MonoBehaviour
     public GameObject enemy;
     public Transform enemyTransform;
 
+    public ScoreSystem scoreSystem;
+
     public float moveSpeed;
     public float rangeToChace;
 
@@ -55,6 +57,7 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("DeadZone"))
         {
+            scoreSystem.AddScore(2);
             Destroy(enemy);
         }
     }

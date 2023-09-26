@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -44,6 +45,11 @@ public class PlayerController : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
     }
 
+    private void OnDisable()
+    {       
+        SceneManager.LoadScene(0);                                                       
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -58,7 +64,6 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector3(rb.velocity.x, jumpHeight, rb.velocity.z);
             onGround = false;
-            scoreSystem.AddScore(1);
         }
 
         KillThePlayer();

@@ -7,6 +7,8 @@ public class BoxController : MonoBehaviour
     public GameObject box;
     public Transform boxTransform;
 
+    public ScoreSystem scoreSystem;
+
     Vector3 spawnPosition;
     float spawnTime;
     float spawnDelay;
@@ -41,6 +43,7 @@ public class BoxController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("DeadZone"))
         {
+            scoreSystem.AddScore(1);
             Destroy(box);
         }
     }
