@@ -14,6 +14,7 @@ public class ScoreSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //every game score starts at zero
         score = 0;
         highScore.text = PlayerPrefs.GetInt("HighScore").ToString();
     }
@@ -24,17 +25,20 @@ public class ScoreSystem : MonoBehaviour
         UpdateScore();
     }
 
+    //method that increases the value of the score
     public void AddScore(int newScore)
     {
         score += newScore;       
     }
 
+    //method that reflects the currect score on the screen
     public void UpdateScore()
     {
         scoreText.text = "Score " + score;
 
         if (score > PlayerPrefs.GetInt("HighScore", 0))
         {
+            //highest score is saved and kept till player tops it again 
             PlayerPrefs.SetInt("HighScore", score);
             highScore.text = score.ToString();
         }

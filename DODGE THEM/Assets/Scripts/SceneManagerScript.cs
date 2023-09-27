@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagerScript : MonoBehaviour
 {
+
+    public GameObject ExitMsg;
+
     public void Play()
     {
         SceneManager.LoadScene(1);
@@ -13,5 +16,12 @@ public class SceneManagerScript : MonoBehaviour
     public void CloseApp()
     {
         Application.Quit();
+    }
+
+    public void Continue()
+    {
+        //Unpause the game and closes exit screen UI
+        Time.timeScale = 1;
+        ExitMsg.SetActive(false);
     }
 }

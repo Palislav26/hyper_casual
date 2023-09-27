@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    //declaring esential variables
-    //public static PlayerController instance;
+
     Rigidbody rb;
     float verticalMovement;
     float horizontalMovement;
@@ -18,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public bool onGround;
 
     public ScoreSystem scoreSystem;
+    public GameObject exitMsg;
 
     public float radius;
     public float explosionPower;
@@ -32,19 +32,17 @@ public class PlayerController : MonoBehaviour
     private float flashTimer;
     public float flashLenght = 0.1f;
 
-    /*private void Awake()
-    {
-        instance = this;
-    }*/
-
     // Start is called before the first frame update
     void Start()
     {
+        //gives us reference to the rigidbody of the player
         rb = GetComponent<Rigidbody>();
+        //setting up the health that is full once the game starts
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
 
+    //once the player gameobject is disabled, we must use this method to bring the player back to menu
     private void OnDisable()
     {       
         SceneManager.LoadScene(0);                                                       
@@ -59,15 +57,25 @@ public class PlayerController : MonoBehaviour
 
         rb.velocity = new Vector3(horizontalMovement * speed, rb.velocity.y, verticalMovement * speed);
 
-        //player can jump only from the ground not in the air
+        //player can jump only from the ground not in the air 
         if (Input.GetKeyDown(KeyCode.Space) && onGround)
         {
             rb.velocity = new Vector3(rb.velocity.x, jumpHeight, rb.velocity.z);
             onGround = false;
         }
+        //once player presses ESC the game pauses and exit screen pops up 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Time.timeScale = 0;
+            exitMsg.SetActive(true);
+        }
 
+        //calling KTP method
         KillThePlayer();
 
+        /*once the player is hit by anything, he becomes invincible for time that can be specified through inspector
+         * player mesh rendered within this period flashes from disabled to active and in reverse
+        */
         if(immortalityTimer > 0)
         {
             immortalityTimer -= Time.deltaTime;
@@ -87,6 +95,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //player takes damage with passed value
     void TakeDamage(int damage)
     {       
         if(immortalityTimer <= 0)
@@ -102,6 +111,7 @@ public class PlayerController : MonoBehaviour
                                  
     }
 
+    //not really kills him, just disable him as gameobject, shochwave effect will trigger
     void KillThePlayer()
     {
         if(currentHealth <= 0)
@@ -111,7 +121,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //detecs if player collides with the platform
+    //detecs if player collides with other gameObjects based on their tag
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Platform"))
@@ -134,33 +144,39 @@ public class PlayerController : MonoBehaviour
         {
             TakeDamage(1);
 
+            //gets rigidbody of the enemy once player touch it
             Rigidbody enemyRigidbody = other.gameObject.GetComponent<Rigidbody>();
+            //gives the direction - away from the player
             Vector3 awayFromPlayer = transform.position - other.gameObject.transform.position;
-
+            //pushes enemy away from the player with calculated direction
             enemyRigidbody.AddForce(awayFromPlayer * normalStrength, ForceMode.Impulse);
 
+            //gives the direction player - opposite direction from the enemy
             Vector3 awayFromEnemy = other.gameObject.transform.position - transform.position;
-
+            //pushes player to this direction
             rb.AddForce(awayFromEnemy * normalStrength, ForceMode.Impulse);
         }
         else if (other.gameObject.CompareTag("BluePill"))
         {
             ShockWave();
-            //Destroy(bluePill);
         }
         else if (other.gameObject.CompareTag("RedPill"))
         {
+            //once player collects the redpill, pill regenerates one health point to the healthbar of the player
             currentHealth += 1;
             healthBar.SetHealth(currentHealth);
-            //Destroy(redPill);
         }
     }
 
+    //creates explosion around the player and throws all gameobjects with colliders away
     public void ShockWave()
     {
+        //assign position to the player
         Vector3 explosionPosition = transform.position;
+        //in radius around player all colliders are marked
         Collider[] colliders = Physics.OverlapSphere(explosionPosition, radius);
 
+        //does the magic
         foreach(Collider hit in colliders)
         {
             Rigidbody rb = hit.GetComponent<Rigidbody>();

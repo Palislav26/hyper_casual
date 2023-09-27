@@ -15,6 +15,7 @@ public class Platform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // rotates slowly the platform
         transform.Rotate(0, speed, 0);
         speed = -0.01f;
     }
