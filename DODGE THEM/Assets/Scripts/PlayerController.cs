@@ -135,6 +135,8 @@ public class PlayerController : MonoBehaviour
         else if(other.gameObject.CompareTag("DeadZone"))
         {
             TakeDamage(5);
+            //if player is under immortality timer, this will "kill" him instead
+            gameObject.SetActive(false);
         }
         else if (other.gameObject.CompareTag("Laser"))
         {
@@ -172,7 +174,7 @@ public class PlayerController : MonoBehaviour
     public void ShockWave()
     {
         //assign position to the player
-        Vector3 explosionPosition = transform.position;
+        Vector3 explosionPosition = new Vector3(transform.position.x, transform.position.y + 5f, transform.position.z);
         //in radius around player all colliders are marked
         Collider[] colliders = Physics.OverlapSphere(explosionPosition, radius);
 

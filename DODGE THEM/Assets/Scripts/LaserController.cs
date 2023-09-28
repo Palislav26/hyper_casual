@@ -7,7 +7,7 @@ public class LaserController : MonoBehaviour
     Vector3 spawnPosition;
     public GameObject laser;  
     public Transform transform;
-    float speed = 0.15f;
+    float speed = 0.05f;
 
     public float secondTillDestruction = 10f;
 
