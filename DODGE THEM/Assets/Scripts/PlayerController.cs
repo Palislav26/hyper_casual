@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]float normalStrength;
 
     public bool onGround;
+    public float jumpStartTime;
+    private float jumpTime;
+    private bool isJumping;
 
     public ScoreSystem scoreSystem;
     public GameObject exitMsg;
@@ -51,27 +54,16 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //setting up vertical and horizontal movement
-        verticalMovement = Input.GetAxis("Vertical");
-        horizontalMovement = Input.GetAxis("Horizontal");
+        jump();
+        KillThePlayer();
+        Movement();
 
-        rb.velocity = new Vector3(horizontalMovement * speed, rb.velocity.y, verticalMovement * speed);
-
-        //player can jump only from the ground not in the air 
-        if (Input.GetKeyDown(KeyCode.Space) && onGround)
-        {
-            rb.velocity = new Vector3(rb.velocity.x, jumpHeight, rb.velocity.z);
-            onGround = false;
-        }
         //once player presses ESC the game pauses and exit screen pops up 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Time.timeScale = 0;
             exitMsg.SetActive(true);
-        }
-
-        //calling KTP method
-        KillThePlayer();
+        }    
 
         /*once the player is hit by anything, he becomes invincible for time that can be specified through inspector
          * player mesh rendered within this period flashes from disabled to active and in reverse
@@ -92,6 +84,46 @@ public class PlayerController : MonoBehaviour
                 playerMR.enabled = true;
             }
 
+        }
+    }
+
+    void Movement()
+    {
+        //setting up vertical and horizontal movement
+        verticalMovement = Input.GetAxis("Vertical");
+        horizontalMovement = Input.GetAxis("Horizontal");
+
+        rb.velocity = new Vector3(horizontalMovement * speed, rb.velocity.y, verticalMovement * speed);
+    }
+
+    void jump()
+    {
+        //player can jump only from the ground not in the air 
+        if (Input.GetKeyDown(KeyCode.Space) && onGround)
+        {
+            isJumping = true;
+            jumpTime = jumpStartTime;
+            rb.velocity = Vector3.up * jumpHeight;
+            onGround = false;
+        }
+
+        if (Input.GetKey(KeyCode.Space) && isJumping == true)
+        {
+
+            if (jumpTime > 0)
+            {
+                rb.velocity = Vector3.up * jumpHeight;
+                jumpTime -= Time.deltaTime;
+            }
+            else
+            {
+                isJumping = false;
+            }
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            isJumping = false;
         }
     }
 
