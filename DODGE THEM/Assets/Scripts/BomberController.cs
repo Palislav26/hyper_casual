@@ -22,6 +22,7 @@ public class BomberController : MonoBehaviour
 
     public float radius;
     public float explosionPower;
+    public ParticleSystem ps;
 
     Vector3 spawnPosition;
     float spawnTime;
@@ -71,11 +72,11 @@ public class BomberController : MonoBehaviour
                 if (TimeToBoom <= 0)
                 {
                     ShockWave();
+                    ps.Play();
                     Destroy(bomber);
                 }
-
             }
-        }       
+        }
     }
     //spawn method
     public void SpawnBomber()
