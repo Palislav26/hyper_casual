@@ -30,7 +30,7 @@ public class BluePill : MonoBehaviour
     void Update()
     {
         //setting up where pill will be respawned
-        spawnPosition = new Vector3(Random.Range(-10, 10), 30, Random.Range(-10, 10));
+        spawnPosition = new Vector3(Random.Range(-7, 7), 15, Random.Range(-7, 7));
     }
 
     //Pill spawner method

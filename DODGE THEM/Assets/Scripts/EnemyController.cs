@@ -39,7 +39,7 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         //gives random position for spawning
-        spawnPosition = new Vector3(Random.Range(-10, 10), 30, Random.Range(-10, 10));
+        spawnPosition = new Vector3(Random.Range(-7, 7), 15, Random.Range(-7, 7));
         //once the player in the calculated range, enemy will start to chase him
         if (Vector3.Distance(transform.position, player.transform.position - transform.position) < rangeToChace)
         {
