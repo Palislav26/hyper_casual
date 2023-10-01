@@ -123,6 +123,7 @@ MonoBehaviour:
   flashLenght: 0.1
   radius: 30
   explosionPower: 10000
+  ps: {fileID: 0}
 --- !u!54 &1161730053624077986
 Rigidbody:
   m_ObjectHideFlags: 0

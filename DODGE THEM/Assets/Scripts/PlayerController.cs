@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
 
     public ScoreSystem scoreSystem;
     public GameObject exitMsg;
+    public ParticleSystem ps;
 
     public float radius;
     public float explosionPower;
@@ -57,6 +58,8 @@ public class PlayerController : MonoBehaviour
         jump();
         KillThePlayer();
         Movement();
+
+        ps.transform.position = transform.position;
 
         //once player presses ESC the game pauses and exit screen pops up 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -193,6 +196,7 @@ public class PlayerController : MonoBehaviour
         else if (other.gameObject.CompareTag("BluePill"))
         {
             ShockWave();
+            ps.Play();
         }
         else if (other.gameObject.CompareTag("RedPill"))
         {

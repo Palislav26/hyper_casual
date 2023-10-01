@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 126990792}
   - component: {fileID: 126990791}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Explosion PS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -321,7 +321,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10651, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -560,9 +560,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.07564971, g: 0.8655343, b: 0.9433962, a: 1}
+      minMaxState: 2
+      minColor: {r: 0.8679245, g: 0.045033824, b: 0.045033824, a: 1}
+      maxColor: {r: 0.9245283, g: 0.54932904, b: 0.07413671, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5092,7 +5092,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &215162341
 GameObject:
@@ -5373,7 +5373,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7960023880765757705, guid: ed7b1fff54c520e419af5ff1c1572991, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 7960023880765757705, guid: ed7b1fff54c520e419af5ff1c1572991, type: 3}
       propertyPath: m_LocalScale.x
@@ -6827,11 +6827,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!23 &1585158741 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 4041314655499568420, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
-  m_PrefabInstance: {fileID: 4041314654404954708}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1588934318
 GameObject:
   m_ObjectHideFlags: 0
@@ -7308,16 +7303,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1959174341 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6137254479029874060, guid: b7372c14a884a4d43987febeabecd8fd, type: 3}
-  m_PrefabInstance: {fileID: 5024907286243843130}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1982049288 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 893609661064807569, guid: 48c0c90d5d15ad0439f4805e384fec9f, type: 3}
-  m_PrefabInstance: {fileID: 4205327638741622402}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2057988124
 GameObject:
   m_ObjectHideFlags: 0
@@ -7571,6 +7556,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 356512505}
     - target: {fileID: 1161730053624077989, guid: c4fcf021303ff6b458f64ae88c35771a, type: 3}
+      propertyPath: radius
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1161730053624077989, guid: c4fcf021303ff6b458f64ae88c35771a, type: 3}
       propertyPath: scoreSystem
       value: 
       objectReference: {fileID: 1711307546}
@@ -7816,10 +7805,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4041314655499568420, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4041314655499568422, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -7865,60 +7850,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4041314655499568423, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
-      propertyPath: sMS
+      propertyPath: ps
       value: 
-      objectReference: {fileID: 1344587402}
+      objectReference: {fileID: 126990792}
     - target: {fileID: 4041314655499568423, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
       propertyPath: exitMsg
       value: 
       objectReference: {fileID: 520912174}
     - target: {fileID: 4041314655499568423, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
-      propertyPath: redPill
-      value: 
-      objectReference: {fileID: 1982049288}
-    - target: {fileID: 4041314655499568423, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
-      propertyPath: bluePill
-      value: 
-      objectReference: {fileID: 1959174341}
-    - target: {fileID: 4041314655499568423, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
-      propertyPath: playerMR
-      value: 
-      objectReference: {fileID: 1585158741}
-    - target: {fileID: 4041314655499568423, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 945547145}
     - target: {fileID: 4041314655499568423, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
-      propertyPath: jumpHeight
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4041314655499568423, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
       propertyPath: scoreSystem
       value: 
       objectReference: {fileID: 1711307546}
-    - target: {fileID: 4041314655499568423, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
-      propertyPath: jumpStartTime
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 4041314655499568423, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
-      propertyPath: explosionPower
-      value: 10000
-      objectReference: {fileID: 0}
-    - target: {fileID: 4041314655499568423, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
-      propertyPath: timerAfterDeath
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4041314655499568423, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
-      propertyPath: immortalityLenght
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4041314655499568441, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4041314655499568442, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
-      propertyPath: m_Mass
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
