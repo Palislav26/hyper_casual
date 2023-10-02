@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]float speed = 5f;
     [SerializeField]float jumpHeight = 10f;
     [SerializeField]float normalStrength;
+    [SerializeField] float enemyStrength;
+    [SerializeField] float strenghtAgainstBoxes;
 
     public bool onGround;
     public float jumpStartTime;
@@ -166,6 +168,12 @@ public class PlayerController : MonoBehaviour
         else if (other.gameObject.CompareTag("Box"))
         {
             onGround = true;
+            //gets rigidbody of the enemy once player touch it
+            Rigidbody boxRigidbody = other.gameObject.GetComponent<Rigidbody>();
+            //gives the direction - away from the player
+            Vector3 awayFromPlayer = transform.position - other.gameObject.transform.position;
+            //pushes enemy away from the player with calculated direction
+            boxRigidbody.AddForce(awayFromPlayer * strenghtAgainstBoxes, ForceMode.Impulse);
         }
         else if(other.gameObject.CompareTag("DeadZone"))
         {
@@ -189,9 +197,9 @@ public class PlayerController : MonoBehaviour
             enemyRigidbody.AddForce(awayFromPlayer * normalStrength, ForceMode.Impulse);
 
             //gives the direction player - opposite direction from the enemy
-            Vector3 awayFromEnemy = other.gameObject.transform.position - transform.position;
+            Vector3 awayFromEnemy = -transform.position + other.gameObject.transform.position;
             //pushes player to this direction
-            rb.AddForce(awayFromEnemy * normalStrength, ForceMode.Impulse);
+            rb.AddForce(awayFromEnemy * enemyStrength, ForceMode.Impulse);
         }
         else if (other.gameObject.CompareTag("BluePill"))
         {

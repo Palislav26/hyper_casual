@@ -20,6 +20,8 @@ public class EnemyController : MonoBehaviour
     float spawnTime;
     float spawnDelay;
 
+    public float normalStrength;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,12 +56,21 @@ public class EnemyController : MonoBehaviour
 
     }
     //once player collides with the enemy, kills it and ads 2 score for its death
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision other)
     {
-        if (collision.gameObject.CompareTag("DeadZone"))
+        if (other.gameObject.CompareTag("DeadZone"))
         {
             scoreSystem.AddScore(2);
             Destroy(enemy);
         }
+        /*else if (other.gameObject.CompareTag("Player"))
+        {
+            //gets rigidbody of the player 
+            Rigidbody playerRigidbody = other.gameObject.GetComponent<Rigidbody>();
+            //gives the direction - away from the player
+            Vector3 awayFromPlayer = transform.position - other.gameObject.transform.position;
+            //pushes player away from the player with calculated direction
+            playerRigidbody.AddForce(awayFromPlayer * normalStrength, ForceMode.Impulse);
+        }*/
     }
 }
