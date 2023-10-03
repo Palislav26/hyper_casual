@@ -12,6 +12,8 @@ public class BluePill : MonoBehaviour
     float spawnTime;
     float spawnDelay;
 
+    public AudioSource audio;
+    public AudioClip boom;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +50,7 @@ public class BluePill : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Player"))
         {
+            audio.PlayOneShot(boom);
             Destroy(bluePill);
         }
     }

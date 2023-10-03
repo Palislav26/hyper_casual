@@ -38,6 +38,10 @@ public class PlayerController : MonoBehaviour
     private float flashTimer;
     public float flashLenght = 0.1f;
 
+    public AudioSource audio;
+    public AudioClip jumpClip;
+    public AudioClip bounceClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -106,10 +110,11 @@ public class PlayerController : MonoBehaviour
         //player can jump only from the ground not in the air 
         if (Input.GetKeyDown(KeyCode.Space) && onGround)
         {
+            audio.PlayOneShot(jumpClip);
             isJumping = true;
             jumpTime = jumpStartTime;
             rb.velocity = Vector3.up * jumpHeight;
-            onGround = false;
+            onGround = false;         
         }
 
         if (Input.GetKey(KeyCode.Space) && isJumping == true)
@@ -188,7 +193,7 @@ public class PlayerController : MonoBehaviour
         else if (other.gameObject.CompareTag("Enemy"))
         {
             TakeDamage(1);
-
+            audio.PlayOneShot(bounceClip);
             //gets rigidbody of the enemy once player touch it
             Rigidbody enemyRigidbody = other.gameObject.GetComponent<Rigidbody>();
             //gives the direction - away from the player

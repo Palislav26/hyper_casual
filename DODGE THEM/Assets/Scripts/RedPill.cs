@@ -12,6 +12,8 @@ public class RedPill : MonoBehaviour
     float spawnTime;
     float spawnDelay;
 
+    public AudioSource audio;
+    public AudioClip healClip;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +51,7 @@ public class RedPill : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Player"))
         {
+            audio.PlayOneShot(healClip);
             Destroy(redPill);
         }
     }

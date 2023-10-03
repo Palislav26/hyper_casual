@@ -28,6 +28,9 @@ public class BomberController : MonoBehaviour
     float spawnTime;
     float spawnDelay;
 
+    public AudioSource audio;
+    public AudioClip boom;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -72,6 +75,7 @@ public class BomberController : MonoBehaviour
                 if (TimeToBoom <= 0)
                 {
                     ShockWave();
+                    audio.PlayOneShot(boom);
                     ps.Play();
                     Destroy(bomber);
                 }
@@ -109,7 +113,7 @@ public class BomberController : MonoBehaviour
 
             if (rb != null)
             {
-                rb.AddExplosionForce(explosionPower, explosionPosition, radius, 3.0f);
+                rb.AddExplosionForce(explosionPower, explosionPosition, radius, 3.0f);                
             }
         }
     }
