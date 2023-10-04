@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2180912948811793052}
   - component: {fileID: 2180912948811793055}
   - component: {fileID: 2180912948811793054}
-  - component: {fileID: 1050424476301509815}
   m_Layer: 0
   m_Name: Laser A
   m_TagString: Laser
@@ -30,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2180912948811793049}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3, y: 0.4, z: -30}
-  m_LocalScale: {x: 64.70764, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 160, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -115,21 +114,4 @@ MonoBehaviour:
   transform: {fileID: 2180912948811793042}
   secondTillDestruction: 15
   spawnTime: 6
-  spawnDelay: 10
---- !u!114 &1050424476301509815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2180912948811793049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 42936e84c4291e749aea170598282fa2, type: 2}
-  isGlobal: 0
-  blendDistance: 0
-  weight: 1
-  priority: 0
+  spawnDelay: 50

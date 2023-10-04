@@ -11,8 +11,8 @@ public class LaserBController : MonoBehaviour
 
     public float secondTillDestruction = 10f;
 
-    public float spawnTime;
-    public float spawnDelay;
+    //public float spawnTime;
+    //public float spawnDelay;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class LaserBController : MonoBehaviour
         //generates random spawn position
         spawnPosition = new Vector3(Random.Range(30, 80), 0.7f, 1.5f);
         //repeats spawning method based on time that can be modified through ispector
-        InvokeRepeating("RespawnLaser", spawnTime, spawnDelay);
+        InvokeRepeating("RespawnLaser", Random.Range(25, 50), Random.Range(100, 200));
         //repeats destroy laser method
         StartCoroutine("DestroyLaser");
     }
