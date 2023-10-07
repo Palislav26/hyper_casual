@@ -42,6 +42,14 @@ public class PlayerController : MonoBehaviour
     public AudioClip jumpClip;
     public AudioClip bounceClip;
 
+    public Transform playerTR;
+    Vector3 mousePos;
+    Vector3 objectPos;
+    float angle;
+    public GameObject bulletPrefab;
+    public Transform firePosition;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -64,6 +72,14 @@ public class PlayerController : MonoBehaviour
         jump();
         KillThePlayer();
         Movement();
+        LookAtTheMouse();
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            GameObject bullet = Instantiate(bulletPrefab, firePosition.position, Quaternion.identity);
+            bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 3000);
+            Destroy(bullet, 5);
+        }
 
         ps.transform.position = transform.position;
 
@@ -237,5 +253,16 @@ public class PlayerController : MonoBehaviour
                 rb.AddExplosionForce(explosionPower, explosionPosition, radius, 3.0f);
             }
         }
+    }
+
+    void LookAtTheMouse()
+    {
+        mousePos = Input.mousePosition;
+        mousePos.z = 5.23f; //The distance between the camera and object
+        objectPos = Camera.main.WorldToScreenPoint(playerTR.position);
+        mousePos.x = mousePos.x - objectPos.x;
+        mousePos.y = mousePos.y - objectPos.y;
+        angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+        playerTR.rotation = Quaternion.Euler(new Vector3(0, -angle + 90, 0));
     }
 }

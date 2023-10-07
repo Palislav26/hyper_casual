@@ -6437,52 +6437,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed7b1fff54c520e419af5ff1c1572991, type: 3}
---- !u!1 &995269324
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 995269325}
-  - component: {fileID: 995269326}
-  m_Layer: 0
-  m_Name: BulletSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &995269325
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 995269324}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.015, y: -0.025, z: 0.026}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 356512505}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &995269326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 995269324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f823a1ad6af64d44acc139a417eb7f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 6025143194376092490, guid: 2ffbf7eb0a3e9b84abaf5af0ded95fe0, type: 3}
-  bulletSpawnerTransform: {fileID: 995269325}
 --- !u!1 &1141691740
 GameObject:
   m_ObjectHideFlags: 0
@@ -8086,10 +8040,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2612555982330897433, guid: 995e08dca93e9b64c90836e590092c3c, type: 3}
-      propertyPath: secondTillDestruction
-      value: 150
-      objectReference: {fileID: 0}
     - target: {fileID: 3011243373846554881, guid: 995e08dca93e9b64c90836e590092c3c, type: 3}
       propertyPath: m_Name
       value: Laser C
@@ -8410,10 +8360,6 @@ PrefabInstance:
     - target: {fileID: 6592700798552069256, guid: 03ef1f586d6c122488706cc22677b86a, type: 3}
       propertyPath: m_Name
       value: Laser D
-      objectReference: {fileID: 0}
-    - target: {fileID: 6893588419676354023, guid: 03ef1f586d6c122488706cc22677b86a, type: 3}
-      propertyPath: secondTillDestruction
-      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 7995016323831161855, guid: 03ef1f586d6c122488706cc22677b86a, type: 3}
       propertyPath: m_RootOrder

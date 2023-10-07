@@ -33,6 +33,7 @@ public class RedPill : MonoBehaviour
     {
         //setting up where pill will be respawned
         spawnPosition = new Vector3(Random.Range(-7, 7), 15, Random.Range(-7, 7));
+
     }
 
     // spawning pill method
@@ -40,6 +41,7 @@ public class RedPill : MonoBehaviour
     {
        
         newInstance = Instantiate(redPill, spawnPosition, pillTransform.rotation);
+        Destroy(newInstance, 10);
     }
 
     // method that destroys the pill once it colledes with gameobject with specific tags

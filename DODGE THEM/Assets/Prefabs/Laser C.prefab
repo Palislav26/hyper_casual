@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2612555982330897433}
   m_Layer: 0
   m_Name: Laser C
-  m_TagString: Untagged
+  m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,6 +112,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laser: {fileID: 3011243373846554881}
   transform: {fileID: 4503366056165793311}
-  secondTillDestruction: 20
-  spawnTime: 12
-  spawnDelay: 250
+  secondTillDestruction: 150

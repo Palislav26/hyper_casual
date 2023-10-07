@@ -5,9 +5,11 @@ using UnityEngine;
 public class BulletSpawner : MonoBehaviour
 {
     public GameObject bullet;
-    public Transform bulletSpawnerTransform;
 
     Vector3 spawnPosition;
+    public Transform spawnerTR;
+    public Transform playerTr;
+
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +20,9 @@ public class BulletSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spawnPosition = new Vector3(bulletSpawnerTransform.position.x, bulletSpawnerTransform.position.y, bulletSpawnerTransform.position.z);
+        spawnerTR = playerTr;
+
+        spawnPosition = new Vector3(spawnerTR.position.x, spawnerTR.position.y, spawnerTR.position.z);
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -28,7 +32,7 @@ public class BulletSpawner : MonoBehaviour
 
     public void SpawnBullet()
     {
-        Instantiate(bullet, spawnPosition, bullet.transform.rotation);
+        Instantiate(bullet, spawnPosition, Quaternion.identity);
 
     }
 }
