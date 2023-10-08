@@ -41,6 +41,8 @@ public class PlayerController : MonoBehaviour
     public AudioSource audio;
     public AudioClip jumpClip;
     public AudioClip bounceClip;
+    public AudioClip gunShot;
+    public AudioClip reloadAmmo;
 
     public Transform playerTR;
     Vector3 mousePos;
@@ -77,7 +79,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             GameObject bullet = Instantiate(bulletPrefab, firePosition.position, Quaternion.identity);
-            bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 3000);
+            bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 10000);
+            audio.PlayOneShot(gunShot);
             Destroy(bullet, 5);
         }
 
@@ -232,6 +235,10 @@ public class PlayerController : MonoBehaviour
             //once player collects the redpill, pill regenerates one health point to the healthbar of the player
             currentHealth += 1;
             healthBar.SetHealth(currentHealth);
+        }
+        else if (other.gameObject.CompareTag("Ammo"))
+        {
+            audio.PlayOneShot(reloadAmmo);
         }
     }
 

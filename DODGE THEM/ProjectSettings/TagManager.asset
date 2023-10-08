@@ -12,6 +12,7 @@ TagManager:
   - BluePill
   - RedPill
   - Bomber
+  - Ammo
   layers:
   - Default
   - TransparentFX
