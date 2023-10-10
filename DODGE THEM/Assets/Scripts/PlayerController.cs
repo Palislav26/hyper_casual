@@ -43,18 +43,29 @@ public class PlayerController : MonoBehaviour
     public AudioClip bounceClip;
     public AudioClip gunShot;
     public AudioClip reloadAmmo;
+    public AudioClip emptyMagazine;
+    public AudioClip outOfGranades;
+    public AudioClip boom;
 
     public Transform playerTR;
     Vector3 mousePos;
     Vector3 objectPos;
     float angle;
+
+    [SerializeField] int currentAmmo;
+    [SerializeField] int currentGranades;
+
     public GameObject bulletPrefab;
     public Transform firePosition;
+    public GameObject granadePrefab;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        currentAmmo = 0;
+        currentGranades = 0;
+
         //gives us reference to the rigidbody of the player
         rb = GetComponent<Rigidbody>();
         //setting up the health that is full once the game starts
@@ -76,13 +87,30 @@ public class PlayerController : MonoBehaviour
         Movement();
         LookAtTheMouse();
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && currentAmmo > 0)
         {
             GameObject bullet = Instantiate(bulletPrefab, firePosition.position, Quaternion.identity);
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 10000);
             audio.PlayOneShot(gunShot);
             Destroy(bullet, 5);
+            currentAmmo -= 1;
         }
+        else if(Input.GetMouseButtonDown(0) && currentAmmo <= 0)
+        {
+            audio.PlayOneShot(emptyMagazine);
+        }
+        else if(Input.GetMouseButtonDown(1) && currentGranades > 0)
+        {
+            GameObject granade = Instantiate(granadePrefab, firePosition.position, Quaternion.identity);
+            granade.GetComponent<Rigidbody>().AddForce(transform.forward * 3000);
+           
+            currentGranades -= 1;
+        }
+        else if (Input.GetMouseButtonDown(1) && currentGranades <= 0)
+        {
+            audio.PlayOneShot(outOfGranades);
+        }
+
 
         ps.transform.position = transform.position;
 
@@ -221,14 +249,16 @@ public class PlayerController : MonoBehaviour
             enemyRigidbody.AddForce(awayFromPlayer * normalStrength, ForceMode.Impulse);
 
             //gives the direction player - opposite direction from the enemy
-            Vector3 awayFromEnemy = -transform.position + other.gameObject.transform.position;
+            //Vector3 awayFromEnemy = -transform.position + other.gameObject.transform.position;
             //pushes player to this direction
-            rb.AddForce(awayFromEnemy * enemyStrength, ForceMode.Impulse);
+            //rb.AddForce(awayFromEnemy * enemyStrength, ForceMode.Impulse);
         }
         else if (other.gameObject.CompareTag("BluePill"))
         {
-            ShockWave();
-            ps.Play();
+            //ShockWave();
+            //ps.Play();
+            audio.PlayOneShot(reloadAmmo);
+            currentGranades += 1;
         }
         else if (other.gameObject.CompareTag("RedPill"))
         {
@@ -238,7 +268,10 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Ammo"))
         {
-            audio.PlayOneShot(reloadAmmo);
+            audio.PlayOneShot(reloadAmmo); 
+            
+            currentAmmo += 25;
+            
         }
     }
 

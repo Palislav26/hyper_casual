@@ -8523,6 +8523,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 126990792}
     - target: {fileID: 4041314655499568423, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
+      propertyPath: boom
+      value: 
+      objectReference: {fileID: 8300000, guid: 1d0036b6245a7dd47aec6a8eb22d3239, type: 3}
+    - target: {fileID: 4041314655499568423, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
       propertyPath: exitMsg
       value: 
       objectReference: {fileID: 520912174}
@@ -8542,6 +8546,22 @@ PrefabInstance:
       propertyPath: scoreSystem
       value: 
       objectReference: {fileID: 1711307546}
+    - target: {fileID: 4041314655499568423, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
+      propertyPath: emptyMagazine
+      value: 
+      objectReference: {fileID: 8300000, guid: a68ecaa4929921b4f8b07e7c27bedc7e, type: 3}
+    - target: {fileID: 4041314655499568423, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
+      propertyPath: granadePrefab
+      value: 
+      objectReference: {fileID: 908765349828506268, guid: f2aed781d8e52bd4e8fd849802832b08, type: 3}
+    - target: {fileID: 4041314655499568423, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
+      propertyPath: outOfGranades
+      value: 
+      objectReference: {fileID: 8300000, guid: f7e043feb8c363c40b725e8f013d5f1e, type: 3}
+    - target: {fileID: 4041314655499568423, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
+      propertyPath: bluePillPrefab
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4041314655499568441, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
       propertyPath: m_Name
       value: Player
