@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2180912948811793052}
   - component: {fileID: 2180912948811793055}
   - component: {fileID: 2180912948811793054}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Laser A
   m_TagString: Laser
   m_Icon: {fileID: 0}
@@ -112,6 +112,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laser: {fileID: 2180912948811793049}
   transform: {fileID: 2180912948811793042}
-  secondTillDestruction: 15
-  spawnTime: 6
-  spawnDelay: 50
+  secondTillDestruction: 30

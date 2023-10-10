@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7674292234114188933}
   - component: {fileID: 6485683825406086564}
   - component: {fileID: 8411615035230822706}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ MonoBehaviour:
   enemy: {fileID: 4334498197715496694}
   enemyTransform: {fileID: 6521458665316551851}
   scoreSystem: {fileID: 0}
-  moveSpeed: 3
+  moveSpeed: 2.5
   rangeToChace: 15
   normalStrength: -2000
 --- !u!54 &8411615035230822706

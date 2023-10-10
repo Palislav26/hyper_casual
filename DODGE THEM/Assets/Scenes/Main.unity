@@ -7563,6 +7563,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 9194783087040394207, guid: 7c10af4b42b010f4c9945913af12f3b9, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c10af4b42b010f4c9945913af12f3b9, type: 3}
 --- !u!1 &1711307545
@@ -8202,10 +8206,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1762685400196629970, guid: 3e4387d6ef813a2419897d5f643b0c3c, type: 3}
-      propertyPath: secondTillDestruction
-      value: 60
-      objectReference: {fileID: 0}
     - target: {fileID: 1762685400196629971, guid: 3e4387d6ef813a2419897d5f643b0c3c, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -8310,10 +8310,6 @@ PrefabInstance:
     - target: {fileID: 2180912948811793049, guid: fbbd73dd591304d42b4cfa66c3fa9f26, type: 3}
       propertyPath: m_Name
       value: Laser A
-      objectReference: {fileID: 0}
-    - target: {fileID: 2180912948811793054, guid: fbbd73dd591304d42b4cfa66c3fa9f26, type: 3}
-      propertyPath: secondTillDestruction
-      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbbd73dd591304d42b4cfa66c3fa9f26, type: 3}

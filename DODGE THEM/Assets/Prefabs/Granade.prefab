@@ -133,13 +133,12 @@ MonoBehaviour:
   granade: {fileID: 908765349828506268}
   granadeTransform: {fileID: 4376203501065624375}
   granadeMR: {fileID: 233334697670214680}
-  boomTimer: 3
+  boomTimer: 2
   flashLenght: 0.1
-  radius: 10
+  radius: 12
   explosionPower: 10000
   audio: {fileID: 3044955173739539064}
   boom: {fileID: 8300000, guid: 1d0036b6245a7dd47aec6a8eb22d3239, type: 3}
-  ps: {fileID: 0}
 --- !u!82 &3044955173739539064
 AudioSource:
   m_ObjectHideFlags: 0
