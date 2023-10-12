@@ -113,6 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammo: {fileID: 1274927156186056982}
   ammoTransform: {fileID: 1274927156186056979}
+  ammoCounter: {fileID: 0}
 --- !u!54 &8201745548756951753
 Rigidbody:
   m_ObjectHideFlags: 0

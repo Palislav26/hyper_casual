@@ -130,5 +130,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bluePill: {fileID: 6137254479029874060}
   pillTransform: {fileID: 6198522004785680085}
-  audio: {fileID: 0}
-  boom: {fileID: 8300000, guid: 1d0036b6245a7dd47aec6a8eb22d3239, type: 3}
+  ammo: {fileID: 0}

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.AI;
+
 
 public class EnemyController : MonoBehaviour
 {
@@ -52,7 +52,7 @@ public class EnemyController : MonoBehaviour
     //spawn method
     public void SpawnEnemy()
     {
-        Instantiate(enemy, spawnPosition, enemyTransform.rotation);
+        GameObject newInstance = Instantiate(enemy, spawnPosition, enemyTransform.rotation);
 
     }
     //once player collides with the enemy, kills it and ads 2 score for its death

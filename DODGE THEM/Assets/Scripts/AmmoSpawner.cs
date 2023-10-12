@@ -12,6 +12,8 @@ public class AmmoSpawner : MonoBehaviour
     float spawnTime;
     float spawnDelay;
 
+    public AmmoCounter ammoCounter;
+
     //public AudioSource audio;
     //public AudioClip healClip;
 
@@ -54,6 +56,7 @@ public class AmmoSpawner : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             //audio.PlayOneShot(healClip);
+            ammoCounter.AddBullets(50);
             Destroy(ammo);
         }
     }

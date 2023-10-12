@@ -54,10 +54,12 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] int currentAmmo;
     [SerializeField] int currentGranades;
+    
 
     public GameObject bulletPrefab;
     public Transform firePosition;
     public GameObject granadePrefab;
+    public AmmoCounter ammoCounter;
 
 
     // Start is called before the first frame update
@@ -94,6 +96,7 @@ public class PlayerController : MonoBehaviour
             audio.PlayOneShot(gunShot);
             Destroy(bullet, 5);
             currentAmmo -= 1;
+            ammoCounter.DeductBullets(1);
         }
         else if(Input.GetMouseButtonDown(0) && currentAmmo <= 0)
         {
@@ -105,6 +108,7 @@ public class PlayerController : MonoBehaviour
             granade.GetComponent<Rigidbody>().AddForce(transform.forward * 3000);
            
             currentGranades -= 1;
+            ammoCounter.DeductGranades(1);
         }
         else if (Input.GetMouseButtonDown(1) && currentGranades <= 0)
         {
@@ -270,7 +274,7 @@ public class PlayerController : MonoBehaviour
         {
             audio.PlayOneShot(reloadAmmo); 
             
-            currentAmmo += 25;
+            currentAmmo += 50;
             
         }
     }

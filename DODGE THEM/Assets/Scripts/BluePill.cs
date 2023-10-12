@@ -12,6 +12,8 @@ public class BluePill : MonoBehaviour
     float spawnTime;
     float spawnDelay;
 
+    public AmmoCounter ammo;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +52,7 @@ public class BluePill : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Player"))
         {
+            ammo.AddGranades(1);
             Destroy(bluePill);
         }
     }
