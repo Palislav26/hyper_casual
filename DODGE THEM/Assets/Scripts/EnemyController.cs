@@ -17,29 +17,40 @@ public class EnemyController : MonoBehaviour
     public float rangeToChace;
 
     Vector3 spawnPosition;
-    float spawnTime;
+    float spawnTime1;
+    float spawnTime2;
+    float spawnTime3;
+    float spawnTime4;
     float spawnDelay;
+    public float timeToAdvance;
 
     public float normalStrength;
 
     // Start is called before the first frame update
     void Start()
     {
+        timeToAdvance = 0;
+
         //reference to the enemy rigidbody
         rb = GetComponent<Rigidbody>();
         //randomizes spawn and delay values for spawning repeat method
-        spawnTime = Random.Range(5, 15);
+        spawnTime1 = Random.Range(15, 30);
+        spawnTime2 = Random.Range(10, 20);
+        spawnTime3 = Random.Range(5, 10);
+        spawnTime4 = Random.Range(2, 5);
+
         spawnDelay = Random.Range(10, 30);
         //repeat spawning method based on randomized values
-        for (int i = 0; i < 1; i++)
-        {
-            InvokeRepeating("SpawnEnemy", spawnTime, spawnDelay);
-        }
+
+        //LateGame();
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        timeToAdvance += Time.deltaTime;
+
         //gives random position for spawning
         spawnPosition = new Vector3(Random.Range(-7, 7), 15, Random.Range(-7, 7));
         //once the player in the calculated range, enemy will start to chase him
@@ -73,4 +84,24 @@ public class EnemyController : MonoBehaviour
             playerRigidbody.AddForce(awayFromPlayer * normalStrength, ForceMode.Impulse);
         }*/
     }
+
+    /*private void LateGame()
+    {       
+        if(timeToAdvance <= 60)
+        {
+            InvokeRepeating("SpawnEnemy", spawnTime1, spawnDelay);
+        }
+        else if(timeToAdvance <= 120)
+        {
+            InvokeRepeating("SpawnEnemy", spawnTime2, spawnDelay);
+        }
+        else if(timeToAdvance <= 180)
+        {
+            InvokeRepeating("SpawnEnemy", spawnTime3, spawnDelay);
+        }
+        else if(timeToAdvance <= 240)
+        {
+            InvokeRepeating("SpawnEnemy", spawnTime4, spawnDelay);
+        }
+    }*/
 }

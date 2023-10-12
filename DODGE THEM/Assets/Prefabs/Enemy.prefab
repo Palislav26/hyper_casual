@@ -118,6 +118,7 @@ MonoBehaviour:
   scoreSystem: {fileID: 0}
   moveSpeed: 2.5
   rangeToChace: 15
+  timeToAdvance: 0
   normalStrength: -2000
 --- !u!54 &8411615035230822706
 Rigidbody:
