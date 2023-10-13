@@ -22,14 +22,12 @@ public class EnemyController : MonoBehaviour
     float spawnTime3;
     float spawnTime4;
     float spawnDelay;
-    public float timeToAdvance;
 
     public float normalStrength;
 
     // Start is called before the first frame update
     void Start()
     {
-        timeToAdvance = 0;
 
         //reference to the enemy rigidbody
         rb = GetComponent<Rigidbody>();
@@ -48,8 +46,7 @@ public class EnemyController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        timeToAdvance += Time.deltaTime;
+    {       
 
         //gives random position for spawning
         spawnPosition = new Vector3(Random.Range(-7, 7), 15, Random.Range(-7, 7));
