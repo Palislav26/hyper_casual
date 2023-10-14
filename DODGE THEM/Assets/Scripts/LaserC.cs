@@ -7,9 +7,8 @@ public class LaserC : MonoBehaviour
     Vector3 spawnPosition;
     public GameObject laser;
     public Transform transform;
-    float speed = 0.15f;
-
-    public float secondTillDestruction = 10f;
+    public float speed = 0.10f;
+    float respawnTimer;
 
     //public float spawnTime;
     //public float spawnDelay;
@@ -17,12 +16,13 @@ public class LaserC : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        respawnTimer = Random.Range(25, 50);
         //generates random spawn position
         spawnPosition = new Vector3(Random.Range(30, 50), 0.58f, 12f);
         //repeats spawning method based on time that can be modified through ispector
-        InvokeRepeating("RespawnLaser", Random.Range(50, 100), Random.Range(250,500));
+        //InvokeRepeating("RespawnLaser", Random.Range(50, 100), Random.Range(250,500));
         //repeats destroy laser method
-        StartCoroutine("DestroyLaser");
+        StartCoroutine(IncreaseSpeed(respawnTimer));
     }
 
     // Update is called once per frame
@@ -35,14 +35,26 @@ public class LaserC : MonoBehaviour
     //spawner method for laser
     public void RespawnLaser()
     {
-        Instantiate(laser, spawnPosition, laser.transform.rotation);
+        GameObject newInstance = Instantiate(laser, spawnPosition, laser.transform.rotation);
+        Destroy(laser, 30);
 
     }
 
     //destroys the laser with given time period that can be modified from the inspector
-    IEnumerator DestroyLaser()
+    IEnumerator IncreaseSpeed(float respawnTimer)
     {
-        yield return new WaitForSeconds(secondTillDestruction);
-        Destroy(laser);
+
+        while (true)
+        {
+            if (speed <= 0.5f)
+            {
+                speed += 0.05f;
+            }
+
+            yield return new WaitForSeconds(respawnTimer);
+
+            RespawnLaser();
+
+        }
     }
 }
