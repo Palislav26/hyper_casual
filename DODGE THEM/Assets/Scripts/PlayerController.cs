@@ -274,7 +274,7 @@ public class PlayerController : MonoBehaviour
         {
             audio.PlayOneShot(reloadAmmo); 
             
-            currentAmmo += 50;
+            currentAmmo += 25;
             
         }
     }

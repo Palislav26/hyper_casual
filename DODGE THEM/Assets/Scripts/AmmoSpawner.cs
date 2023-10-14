@@ -56,7 +56,7 @@ public class AmmoSpawner : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             //audio.PlayOneShot(healClip);
-            ammoCounter.AddBullets(50);
+            ammoCounter.AddBullets(25);
             Destroy(ammo);
         }
     }

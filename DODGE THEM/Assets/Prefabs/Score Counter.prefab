@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
   highScore: {fileID: 0}
-  score: 16
+  score: 142

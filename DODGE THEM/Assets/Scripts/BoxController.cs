@@ -8,6 +8,7 @@ public class BoxController : MonoBehaviour
     public Transform boxTransform;
 
     public ScoreSystem scoreSystem;
+    public PrefabSpawner prefabSpawner;
 
     Vector3 spawnPosition;
     float spawnTime;
@@ -38,7 +39,7 @@ public class BoxController : MonoBehaviour
     //spawns box
     public void SpawnBox()
     {
-        Instantiate(box, spawnPosition, boxTransform.rotation);
+        GameObject newInstance = Instantiate(box, spawnPosition, boxTransform.rotation);
 
     }
 
@@ -48,6 +49,11 @@ public class BoxController : MonoBehaviour
         if (collision.gameObject.CompareTag("DeadZone"))
         {
             scoreSystem.AddScore(1);
+
+            if (prefabSpawner.endGame == true)
+            {
+                scoreSystem.AddScore(1);
+            }
             Destroy(box);
         }
     }
