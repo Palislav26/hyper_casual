@@ -231,6 +231,16 @@ public class PlayerController : MonoBehaviour
             //pushes enemy away from the player with calculated direction
             boxRigidbody.AddForce(awayFromPlayer * strenghtAgainstBoxes, ForceMode.Impulse);
         }
+        else if (other.gameObject.CompareTag("BigBox"))
+        {
+            onGround = true;
+            //gets rigidbody of the enemy once player touch it
+            Rigidbody boxRigidbody = other.gameObject.GetComponent<Rigidbody>();
+            //gives the direction - away from the player
+            Vector3 awayFromPlayer = transform.position - other.gameObject.transform.position;
+            //pushes enemy away from the player with calculated direction
+            boxRigidbody.AddForce(awayFromPlayer * strenghtAgainstBoxes, ForceMode.Impulse);
+        }
         else if(other.gameObject.CompareTag("DeadZone"))
         {
             TakeDamage(5);

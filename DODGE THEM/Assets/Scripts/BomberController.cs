@@ -41,12 +41,12 @@ public class BomberController : MonoBehaviour
         //reference to the enemy rigidbody
         rb = GetComponent<Rigidbody>();
         //randomizes spawn and delay values for spawning repeat method
-        spawnTime = Random.Range(10, 20);
+        spawnTime = Random.Range(25, 50);
         spawnDelay = Random.Range(50, 70);
         //repeat spawning method based on randomized values
         for (int i = 0; i < 1; i++)
         {
-            InvokeRepeating("SpawnBomber", spawnTime, spawnDelay);
+            InvokeRepeating("SpawnBomber", spawnDelay, spawnTime);
         }
     }
 

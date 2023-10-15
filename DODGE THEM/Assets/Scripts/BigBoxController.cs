@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoxController : MonoBehaviour
+public class BigBoxController : MonoBehaviour
 {
-    public GameObject box;
+    public GameObject bigBox;
     public Transform boxTransform;
 
     Vector3 spawnPosition;
@@ -15,10 +15,11 @@ public class BoxController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        repeatTimer = 10;
+        repeatTimer = 50;
+
         //repeats spawning
         StartCoroutine(IncreaseSpawning(repeatTimer));
-        
+
     }
 
     // Update is called once per frame
@@ -29,11 +30,11 @@ public class BoxController : MonoBehaviour
     }
 
     //spawns box
-    public void SpawnBox()
+    public void SpawnBigBox()
     {
-        GameObject newInstance = Instantiate(box, spawnPosition, boxTransform.rotation);
+        GameObject newInstance = Instantiate(bigBox, spawnPosition, boxTransform.rotation);
 
-    }   
+    }
 
     IEnumerator IncreaseSpawning(float repeatTimer)
     {
@@ -41,14 +42,14 @@ public class BoxController : MonoBehaviour
 
         while (true)
         {
-            if (repeatTimer >= 3)
+            if (repeatTimer >= 31)
             {
-                repeatTimer -= 0.2f;
+                repeatTimer -= 1f;
             }
 
             yield return new WaitForSeconds(repeatTimer);
 
-            SpawnBox();
+            SpawnBigBox();
         }
     }
 }
