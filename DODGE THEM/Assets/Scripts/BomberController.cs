@@ -76,7 +76,7 @@ public class BomberController : MonoBehaviour
                 {
                     ShockWave();
                     audio.PlayOneShot(boom);
-                    ps.Play();
+                    SpawnParticles();
                     Destroy(bomber);
                 }
             }
@@ -116,5 +116,13 @@ public class BomberController : MonoBehaviour
                 rb.AddExplosionForce(explosionPower, explosionPosition, radius, 3.0f);                
             }
         }
+    }
+
+    public void SpawnParticles()
+    {
+        ParticleSystem newInstance = Instantiate(ps, bomber.transform.position, Quaternion.identity);
+        newInstance.Play();
+        Destroy(newInstance, 5);
+
     }
 }

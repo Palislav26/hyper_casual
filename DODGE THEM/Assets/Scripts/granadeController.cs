@@ -21,6 +21,8 @@ public class granadeController : MonoBehaviour
     public AudioSource audio;
     public AudioClip boom;
 
+    public ParticleSystem ps;
+
     //public ParticleSystem ps;
 
     // Start is called before the first frame update
@@ -48,9 +50,8 @@ public class granadeController : MonoBehaviour
 
             if (TimeToBoom <= 0)
             {
-                ShockWave();
-                audio.PlayOneShot(boom);
-                //ps.Play();
+                ShockWave();              
+                SpawnParticles();
                 Destroy(granade);
             }
         }
@@ -71,8 +72,16 @@ public class granadeController : MonoBehaviour
             if (rb != null)
             {
                 rb.AddExplosionForce(explosionPower, explosionPosition, radius, 3.0f);
+                audio.PlayOneShot(boom);
             }
         }
     }
 
+    public void SpawnParticles()
+    {
+        ParticleSystem newInstance = Instantiate(ps, granade.transform.position, Quaternion.identity);
+        newInstance.Play();
+        Destroy(newInstance, 5);
+
+    }
 }

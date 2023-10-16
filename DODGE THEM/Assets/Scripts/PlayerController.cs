@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip emptyMagazine;
     public AudioClip outOfGranades;
     public AudioClip boom;
+    public float secondsTillBoom;
 
     public Transform playerTR;
     Vector3 mousePos;
@@ -84,7 +85,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        jump();
+        Jump();
         KillThePlayer();
         Movement();
         LookAtTheMouse();
@@ -109,6 +110,8 @@ public class PlayerController : MonoBehaviour
            
             currentGranades -= 1;
             ammoCounter.DeductGranades(1);
+            PlayBoomSound();
+            secondsTillBoom = 0;
         }
         else if (Input.GetMouseButtonDown(1) && currentGranades <= 0)
         {
@@ -145,6 +148,12 @@ public class PlayerController : MonoBehaviour
             }
 
         }
+
+        //esential for playing boom sound // fix this as well
+        if (secondsTillBoom > 0)
+        {
+            secondsTillBoom -= Time.deltaTime;
+        }
     }
 
     void Movement()
@@ -156,7 +165,7 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector3(horizontalMovement * speed, rb.velocity.y, verticalMovement * speed);
     }
 
-    void jump()
+    void Jump()
     {
         //player can jump only from the ground not in the air 
         if (Input.GetKeyDown(KeyCode.Space) && onGround)
@@ -318,5 +327,14 @@ public class PlayerController : MonoBehaviour
         mousePos.y = mousePos.y - objectPos.y;
         angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
         playerTR.rotation = Quaternion.Euler(new Vector3(0, -angle + 90, 0));
+    }
+
+    void PlayBoomSound() // fix this
+    {             
+        if (secondsTillBoom <= 0)
+        {
+            audio.PlayOneShot(boom);
+            secondsTillBoom = 2f;
+        }
     }
 }

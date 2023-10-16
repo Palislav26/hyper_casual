@@ -139,6 +139,7 @@ MonoBehaviour:
   explosionPower: 10000
   audio: {fileID: 3044955173739539064}
   boom: {fileID: 8300000, guid: 1d0036b6245a7dd47aec6a8eb22d3239, type: 3}
+  ps: {fileID: 952780119535345414, guid: 0f4edd091fa71b445aace13f2c9d7e86, type: 3}
 --- !u!82 &3044955173739539064
 AudioSource:
   m_ObjectHideFlags: 0
@@ -149,8 +150,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 1d0036b6245a7dd47aec6a8eb22d3239, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 0.374
   m_Pitch: 1
   Loop: 0
