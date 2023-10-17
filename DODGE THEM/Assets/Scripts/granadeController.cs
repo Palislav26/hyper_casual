@@ -23,9 +23,7 @@ public class granadeController : MonoBehaviour
 
     public ParticleSystem ps;
 
-    //public ParticleSystem ps;
 
-    // Start is called before the first frame update
     void Start()
     {
         //setting up values based on passed values in inspector
@@ -82,6 +80,5 @@ public class granadeController : MonoBehaviour
         ParticleSystem newInstance = Instantiate(ps, granade.transform.position, Quaternion.identity);
         newInstance.Play();
         Destroy(newInstance, 5);
-
     }
 }

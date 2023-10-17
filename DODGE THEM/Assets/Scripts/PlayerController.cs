@@ -78,8 +78,11 @@ public class PlayerController : MonoBehaviour
 
     //once the player gameobject is disabled, we must use this method to bring the player back to menu
     private void OnDisable()
-    {       
-        SceneManager.LoadScene(0);                                                       
+    {
+        PlayBoomSound();
+        ps.Play();
+        ShockWave();
+        Invoke("LoadMenuScene", 3);
     }
 
     // Update is called once per frame
@@ -217,9 +220,8 @@ public class PlayerController : MonoBehaviour
     void KillThePlayer()
     {
         if(currentHealth <= 0)
-        {
-            gameObject.SetActive(false);
-            ShockWave();
+        {           
+            gameObject.SetActive(false);          
         }
     }
 
@@ -336,5 +338,10 @@ public class PlayerController : MonoBehaviour
             audio.PlayOneShot(boom);
             secondsTillBoom = 2f;
         }
+    }
+
+    void LoadMenuScene( )
+    {
+        SceneManager.LoadScene(0);
     }
 }
