@@ -61,5 +61,14 @@ public class EnemyController : MonoBehaviour
             }
             Destroy(enemy);
         }
+        else if (other.gameObject.CompareTag("Player"))
+        {
+            Rigidbody playerRigidbody = other.gameObject.GetComponent<Rigidbody>();
+            //gives the direction - away from the player
+            Vector3 awayFromEnemy = transform.position - other.gameObject.transform.position;
+            //pushes enemy away from the player with calculated direction
+            playerRigidbody.AddForce(awayFromEnemy.normalized * normalStrength, ForceMode.Impulse);
+            //playerRigidbody.velocity = awayFromEnemy * Mathf.Max(500f, 0);
+        }
     }
 }

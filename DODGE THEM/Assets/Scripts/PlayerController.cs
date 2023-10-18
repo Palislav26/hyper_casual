@@ -46,7 +46,6 @@ public class PlayerController : MonoBehaviour
     public AudioClip emptyMagazine;
     public AudioClip outOfGranades;
     public AudioClip boom;
-    public float secondsTillBoom;
 
     public Transform playerTR;
     Vector3 mousePos;
@@ -113,8 +112,7 @@ public class PlayerController : MonoBehaviour
            
             currentGranades -= 1;
             ammoCounter.DeductGranades(1);
-            PlayBoomSound();
-            secondsTillBoom = 0;
+            Invoke("PlayBoomSound", 2);
         }
         else if (Input.GetMouseButtonDown(1) && currentGranades <= 0)
         {
@@ -150,12 +148,6 @@ public class PlayerController : MonoBehaviour
                 playerMR.enabled = true;
             }
 
-        }
-
-        //esential for playing boom sound // fix this as well
-        if (secondsTillBoom > 0)
-        {
-            secondsTillBoom -= Time.deltaTime;
         }
     }
 
@@ -267,16 +259,11 @@ public class PlayerController : MonoBehaviour
             TakeDamage(1);
             audio.PlayOneShot(bounceClip);
             //gets rigidbody of the enemy once player touch it
-            Rigidbody enemyRigidbody = other.gameObject.GetComponent<Rigidbody>();
+            /*Rigidbody enemyRigidbody = other.gameObject.GetComponent<Rigidbody>();
             //gives the direction - away from the player
             Vector3 awayFromPlayer = transform.position - other.gameObject.transform.position;
             //pushes enemy away from the player with calculated direction
-            enemyRigidbody.AddForce(awayFromPlayer * normalStrength, ForceMode.Impulse);
-
-            //gives the direction player - opposite direction from the enemy
-            //Vector3 awayFromEnemy = -transform.position + other.gameObject.transform.position;
-            //pushes player to this direction
-            //rb.AddForce(awayFromEnemy * enemyStrength, ForceMode.Impulse);
+            enemyRigidbody.AddForce(awayFromPlayer * normalStrength, ForceMode.Impulse);*/
         }
         else if (other.gameObject.CompareTag("BluePill"))
         {
@@ -331,13 +318,9 @@ public class PlayerController : MonoBehaviour
         playerTR.rotation = Quaternion.Euler(new Vector3(0, -angle + 90, 0));
     }
 
-    void PlayBoomSound() // fix this
+    void PlayBoomSound() 
     {             
-        if (secondsTillBoom <= 0)
-        {
-            audio.PlayOneShot(boom);
-            secondsTillBoom = 2f;
-        }
+            audio.PlayOneShot(boom);    
     }
 
     void LoadMenuScene( )
