@@ -259,11 +259,11 @@ public class PlayerController : MonoBehaviour
             TakeDamage(1);
             audio.PlayOneShot(bounceClip);
             //gets rigidbody of the enemy once player touch it
-            /*Rigidbody enemyRigidbody = other.gameObject.GetComponent<Rigidbody>();
+            Rigidbody enemyRigidbody = other.gameObject.GetComponent<Rigidbody>();
             //gives the direction - away from the player
             Vector3 awayFromPlayer = transform.position - other.gameObject.transform.position;
             //pushes enemy away from the player with calculated direction
-            enemyRigidbody.AddForce(awayFromPlayer * normalStrength, ForceMode.Impulse);*/
+            enemyRigidbody.AddForce(awayFromPlayer * normalStrength, ForceMode.Impulse);
         }
         else if (other.gameObject.CompareTag("BluePill"))
         {
@@ -284,6 +284,11 @@ public class PlayerController : MonoBehaviour
             
             currentAmmo += 25;
             
+        }
+        else if (other.gameObject.CompareTag("Jumper"))
+        {
+            TakeDamage(1);
+            audio.PlayOneShot(bounceClip);
         }
     }
 

@@ -14,6 +14,7 @@ TagManager:
   - Bomber
   - Ammo
   - BigBox
+  - Jumper
   layers:
   - Default
   - TransparentFX
