@@ -15,7 +15,7 @@ public class BoxController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        repeatTimer = 10;
+        repeatTimer = 8;
         //repeats spawning
         StartCoroutine(IncreaseSpawning(repeatTimer));
         
@@ -41,7 +41,7 @@ public class BoxController : MonoBehaviour
 
         while (true)
         {
-            if (repeatTimer >= 3)
+            if (repeatTimer >= 2)
             {
                 repeatTimer -= 0.2f;
             }

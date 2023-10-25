@@ -17,6 +17,6 @@ public class Platform : MonoBehaviour
     {
         // rotates slowly the platform
         transform.Rotate(0, speed, 0);
-        speed = -0.01f;
+        speed = -0.02f;
     }
 }
