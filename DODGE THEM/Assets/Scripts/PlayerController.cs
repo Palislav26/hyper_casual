@@ -81,7 +81,6 @@ public class PlayerController : MonoBehaviour
         PlayBoomSound();
         ps.Play();
         ShockWave();
-        Invoke("LoadMenuScene", 3);
     }
 
     // Update is called once per frame
@@ -326,10 +325,5 @@ public class PlayerController : MonoBehaviour
     void PlayBoomSound() 
     {             
             audio.PlayOneShot(boom);    
-    }
-
-    void LoadMenuScene( )
-    {
-        SceneManager.LoadScene(0);
     }
 }

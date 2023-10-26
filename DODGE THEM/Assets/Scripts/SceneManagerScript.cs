@@ -7,10 +7,12 @@ public class SceneManagerScript : MonoBehaviour
 {
 
     public GameObject ExitMsg;
+    public bool playPressed = false;
 
     public void Play()
     {
-        SceneManager.LoadScene(1);
+        //SceneManager.LoadScene(1);
+        playPressed = true;
     }
 
     public void CloseApp()
