@@ -21,6 +21,13 @@ public class JumperController : MonoBehaviour
     public float rangeToChace;
     public float moveSpeed;
 
+    public float radius;
+    public float explosionPower;
+    public ParticleSystem ps;
+
+    public AudioSource audio;
+    public AudioClip boom;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -85,6 +92,13 @@ public class JumperController : MonoBehaviour
             }
             Destroy(gameObject);
         }
+        else if (other.gameObject.CompareTag("Bullet"))
+        {
+            ShockWave();
+            audio.PlayOneShot(boom);
+            SpawnParticles();
+            Destroy(gameObject);
+        }
     }
 
     void SpawnJumper()
@@ -112,5 +126,32 @@ public class JumperController : MonoBehaviour
                 endGame = true;
             }
         }
+    }
+
+    public void ShockWave()
+    {
+        //assign position to the player
+        Vector3 explosionPosition = new Vector3(transform.position.x, transform.position.y + 5f, transform.position.z);
+        //in radius around player all colliders are marked
+        Collider[] colliders = Physics.OverlapSphere(explosionPosition, radius);
+
+        //does the magic
+        foreach (Collider hit in colliders)
+        {
+            Rigidbody rb = hit.GetComponent<Rigidbody>();
+
+            if (rb != null)
+            {
+                rb.AddExplosionForce(explosionPower, explosionPosition, radius, 3.0f);
+            }
+        }
+    }
+
+    public void SpawnParticles()
+    {
+        ParticleSystem newInstance = Instantiate(ps, jumper.transform.position, Quaternion.identity);
+        newInstance.Play();
+        Destroy(newInstance, 5);
+
     }
 }

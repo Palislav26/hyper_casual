@@ -3168,7 +3168,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1606532018}
   playerController: {fileID: 1609957298}
-  sceneMS: {fileID: 1344587402}
 --- !u!114 &1609957298 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4041314655499568423, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
@@ -3553,16 +3552,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1934249001 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6541577631307603396, guid: b394f2c396c512a4c8d623fd5796e81e, type: 3}
-  m_PrefabInstance: {fileID: 6541577630019310061}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1934249007 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6541577631307603394, guid: b394f2c396c512a4c8d623fd5796e81e, type: 3}
-  m_PrefabInstance: {fileID: 6541577630019310061}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2057988124
 GameObject:
   m_ObjectHideFlags: 0
@@ -4554,17 +4543,17 @@ PrefabInstance:
       value: Jumper
       objectReference: {fileID: 0}
     - target: {fileID: 6541577631307603398, guid: b394f2c396c512a4c8d623fd5796e81e, type: 3}
-      propertyPath: jumper
+      propertyPath: ps
       value: 
-      objectReference: {fileID: 1934249001}
+      objectReference: {fileID: 126990792}
+    - target: {fileID: 6541577631307603398, guid: b394f2c396c512a4c8d623fd5796e81e, type: 3}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 1198662015}
     - target: {fileID: 6541577631307603398, guid: b394f2c396c512a4c8d623fd5796e81e, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 356512505}
-    - target: {fileID: 6541577631307603398, guid: b394f2c396c512a4c8d623fd5796e81e, type: 3}
-      propertyPath: jumperTr
-      value: 
-      objectReference: {fileID: 1934249007}
     - target: {fileID: 6541577631307603398, guid: b394f2c396c512a4c8d623fd5796e81e, type: 3}
       propertyPath: scoreSystem
       value: 
