@@ -21,6 +21,7 @@ public class BomberController : MonoBehaviour
     public float flashLenght = 0.1f;
 
     public float radius;
+    public float destructionRadius;
     public float explosionPower;
     public ParticleSystem ps;
 
@@ -105,6 +106,7 @@ public class BomberController : MonoBehaviour
         Vector3 explosionPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         //in radius around player all colliders are marked
         Collider[] colliders = Physics.OverlapSphere(explosionPosition, radius);
+        Collider[] boxColliders = Physics.OverlapSphere(explosionPosition, destructionRadius);
 
         //does the magic
         foreach (Collider hit in colliders)
@@ -114,6 +116,17 @@ public class BomberController : MonoBehaviour
             if (rb != null)
             {
                 rb.AddExplosionForce(explosionPower, explosionPosition, radius, 3.0f);                
+            }
+            else if(rb == null)
+            {
+                foreach (Collider damaged in boxColliders)
+                {
+                    Collider collider = damaged.GetComponent<Collider>();
+                    if (collider.gameObject.CompareTag("Platform"))
+                    {
+                        collider.gameObject.SetActive(false);
+                    }                   
+                }
             }
         }
     }

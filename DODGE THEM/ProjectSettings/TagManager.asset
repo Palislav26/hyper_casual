@@ -16,6 +16,7 @@ TagManager:
   - BigBox
   - Jumper
   - Bullet
+  - water
   layers:
   - Default
   - TransparentFX

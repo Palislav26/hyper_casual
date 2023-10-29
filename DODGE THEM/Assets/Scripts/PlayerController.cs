@@ -223,6 +223,10 @@ public class PlayerController : MonoBehaviour
         {
             onGround = true;
         }
+        else if (other.gameObject.CompareTag("water"))
+        {
+            onGround = true;
+        }
         else if (other.gameObject.CompareTag("Box"))
         {
             onGround = true;
