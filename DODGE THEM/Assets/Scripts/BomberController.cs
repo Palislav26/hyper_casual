@@ -35,7 +35,7 @@ public class BomberController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //setting up values based on passed values in inspector
+        
         TimeToBoom = boomTimer;
         flashTimer = flashLenght;
 
@@ -94,7 +94,7 @@ public class BomberController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("DeadZone"))
         {
-            //scoreSystem.AddScore(2);
+            scoreSystem.AddScore(10);
             Destroy(bomber);
         }
     }
@@ -131,11 +131,11 @@ public class BomberController : MonoBehaviour
         }
     }
 
+    // Spawn particles
     public void SpawnParticles()
     {
         ParticleSystem newInstance = Instantiate(ps, bomber.transform.position, Quaternion.identity);
         newInstance.Play();
         Destroy(newInstance, 5);
-
     }
 }

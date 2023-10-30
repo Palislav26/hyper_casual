@@ -40,15 +40,15 @@ public class LaserController : MonoBehaviour
 
     }
 
-    //destroys the laser with given time period that can be modified from the inspector
+    //based on repeatTimer variable increases the spawn rate over time
     IEnumerator IncreaseSpeed(float respawnTimer)
     {
 
         while (true)
         {
-            if (speed <= 0.5f)
+            if (speed <= 0.4f)
             {
-                speed += 0.05f;
+                speed += 0.03f;
             }
 
             yield return new WaitForSeconds(respawnTimer);

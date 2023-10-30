@@ -13,8 +13,9 @@ public class AmmoCounter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        numberOfBullets = 0;
-        numberOfGranades = 0;
+        //we tell UI how many ammunition player has at the start
+        numberOfBullets = 25;
+        numberOfGranades = 1;
     }
 
     // Update is called once per frame
@@ -23,31 +24,38 @@ public class AmmoCounter : MonoBehaviour
         UpdateBullets();
         UpdateGranades();
     }
+
+    //adds bullets 
     public void AddBullets(int newBullets)
     {
         numberOfBullets += newBullets;
     }
 
+    //deduct bullets
     public void DeductBullets(int newBullets)
     {
         numberOfBullets -= newBullets;
     }
 
+    //adds granades 
     public void AddGranades(int newGranades)
     {
         numberOfGranades += newGranades;
     }
 
+    //adds granades 
     public void DeductGranades(int newGranades)
     {
         numberOfGranades -= newGranades;
     }
 
-    //method that reflects the currect score on the screen
+    //method that reflects the currect bullet count on the screen
     public void UpdateBullets()
     {
         bulletsTxt.text = "" + numberOfBullets;
     }
+
+    //method that reflects the currect granade count on the screen
     public void UpdateGranades()
     {
         granadesTxt.text = "" + numberOfGranades;

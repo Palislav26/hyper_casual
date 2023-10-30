@@ -18,14 +18,14 @@ public class RedPill : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         //randomizes spawn and delay times that are esential for spawning the pill
         spawnTime = Random.Range(30, 50);
         spawnDelay = Random.Range(30, 50);
-        //repeats spawning 
-        for (int i = 0; i < 1; i++)
-        {
+
+        //repeats spawning        
             InvokeRepeating("SpawnPill", spawnTime, spawnDelay);
-        }
+        
     }
 
     // Update is called once per frame

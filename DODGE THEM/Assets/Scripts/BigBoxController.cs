@@ -36,9 +36,9 @@ public class BigBoxController : MonoBehaviour
 
     }
 
+    //this method spawns more BigBoxes over time based on passed repeatTimer variable
     IEnumerator IncreaseSpawning(float repeatTimer)
     {
-        //yield return new WaitForSeconds(time);
 
         while (true)
         {

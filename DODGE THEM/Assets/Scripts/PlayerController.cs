@@ -65,8 +65,10 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentAmmo = 0;
-        currentGranades = 0;
+        //currentAmmo = 0;
+        currentAmmo = 25;
+        //currentGranades = 0;
+        currentGranades = 1;
 
         //gives us reference to the rigidbody of the player
         rb = GetComponent<Rigidbody>();
@@ -75,7 +77,7 @@ public class PlayerController : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
     }
 
-    //once the player gameobject is disabled, we must use this method to bring the player back to menu
+    //once the player gameobject is disabled (player dies), we can still execute some methods here
     private void OnDisable()
     {
         PlayBoomSound();
@@ -86,11 +88,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //we call all method here
         Jump();
         KillThePlayer();
         Movement();
         LookAtTheMouse();
 
+        //once player presses left mouse button, and has any ammo left, he shoots
         if (Input.GetMouseButtonDown(0) && currentAmmo > 0)
         {
             GameObject bullet = Instantiate(bulletPrefab, firePosition.position, Quaternion.identity);
@@ -100,11 +104,11 @@ public class PlayerController : MonoBehaviour
             currentAmmo -= 1;
             ammoCounter.DeductBullets(1);
         }
-        else if(Input.GetMouseButtonDown(0) && currentAmmo <= 0)
+        else if(Input.GetMouseButtonDown(0) && currentAmmo <= 0) //once the player tries to shoot and has no ammo, makes sound of empty magazine
         {
             audio.PlayOneShot(emptyMagazine);
         }
-        else if(Input.GetMouseButtonDown(1) && currentGranades > 0)
+        else if(Input.GetMouseButtonDown(1) && currentGranades > 0) //once player presses right mouse button, and has any granades left, he shoots one
         {
             GameObject granade = Instantiate(granadePrefab, firePosition.position, Quaternion.identity);
             granade.GetComponent<Rigidbody>().AddForce(transform.forward * 3000);
@@ -113,12 +117,12 @@ public class PlayerController : MonoBehaviour
             ammoCounter.DeductGranades(1);
             Invoke("PlayBoomSound", 2);
         }
-        else if (Input.GetMouseButtonDown(1) && currentGranades <= 0)
+        else if (Input.GetMouseButtonDown(1) && currentGranades <= 0) // //once the player tries to shoot and has no granades, makes sound of empty granade launcher
         {
             audio.PlayOneShot(outOfGranades);
         }
 
-
+        //assigning particles position with position of the player
         ps.transform.position = transform.position;
 
         //once player presses ESC the game pauses and exit screen pops up 
@@ -150,15 +154,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //setting up vertical and horizontal movement
     void Movement()
-    {
-        //setting up vertical and horizontal movement
+    {      
         verticalMovement = Input.GetAxis("Vertical");
         horizontalMovement = Input.GetAxis("Horizontal");
 
         rb.velocity = new Vector3(horizontalMovement * speed, rb.velocity.y, verticalMovement * speed);
     }
 
+    //Jumping
     void Jump()
     {
         //player can jump only from the ground not in the air 
@@ -171,6 +176,7 @@ public class PlayerController : MonoBehaviour
             onGround = false;         
         }
 
+        //player can calculate their jump, longer the imput is, longer the jump is
         if (Input.GetKey(KeyCode.Space) && isJumping == true)
         {
 
@@ -315,6 +321,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //player always looks at the mouse position
     void LookAtTheMouse()
     {
         mousePos = Input.mousePosition;
@@ -326,6 +333,7 @@ public class PlayerController : MonoBehaviour
         playerTR.rotation = Quaternion.Euler(new Vector3(0, -angle + 90, 0));
     }
 
+    //there was an error if I tried to play boom sound without this method..
     void PlayBoomSound() 
     {             
             audio.PlayOneShot(boom);    

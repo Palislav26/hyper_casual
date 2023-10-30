@@ -33,11 +33,11 @@ public class BoxController : MonoBehaviour
     {
         GameObject newInstance = Instantiate(box, spawnPosition, boxTransform.rotation);
 
-    }   
+    }
 
+    //based on repeatTimer variable increases the spawn rate over time
     IEnumerator IncreaseSpawning(float repeatTimer)
     {
-        //yield return new WaitForSeconds(time);
 
         while (true)
         {

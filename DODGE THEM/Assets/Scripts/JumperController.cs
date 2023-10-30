@@ -32,6 +32,7 @@ public class JumperController : MonoBehaviour
     void Start()
     {
         repeatTimer = 20;
+
         rb = GetComponent<Rigidbody>();
 
         StartCoroutine(IncreaseSpawning(repeatTimer));
@@ -50,6 +51,7 @@ public class JumperController : MonoBehaviour
         }
     }
 
+    // Jumper enemy jumps everytime he touches the ground
     void Jump()
     {
         //player can jump only from the ground not in the air 
@@ -69,13 +71,10 @@ public class JumperController : MonoBehaviour
                 isJumping = false;
             
         }
-
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            isJumping = false;
-        }
     }
 
+
+    //collisions with other gameobjects based on their tags
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Platform"))
@@ -97,18 +96,20 @@ public class JumperController : MonoBehaviour
             ShockWave();
             audio.PlayOneShot(boom);
             SpawnParticles();
+            scoreSystem.AddScore(5);
             Destroy(gameObject);
         }
     }
 
+    //spawner method 
     void SpawnJumper()
     {
         Instantiate(jumper, spawnPosition, jumperTr.rotation);
     }
 
+    //based on repeatTimer variable increases the spawn rate over time
     IEnumerator IncreaseSpawning(float repeatTimer)
     {
-        //yield return new WaitForSeconds(time);
 
         while (true)
         {
@@ -128,6 +129,7 @@ public class JumperController : MonoBehaviour
         }
     }
 
+    //explosion with area impact
     public void ShockWave()
     {
         //assign position to the player

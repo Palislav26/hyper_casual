@@ -9,6 +9,7 @@ public class ShowCredits : MonoBehaviour
     public GameObject creditsButton;
     public GameObject exitButton;
 
+    //simply opens hidden credits UI
     public void StartCredits()
     {
         credits.SetActive(true);
@@ -17,8 +18,8 @@ public class ShowCredits : MonoBehaviour
         exitButton.SetActive(false);
     }
 
-
-     void Update()
+    //closes credits UI
+    void Update()
     {
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Escape))
         {

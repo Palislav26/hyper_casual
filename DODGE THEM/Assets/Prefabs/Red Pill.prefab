@@ -132,3 +132,6 @@ MonoBehaviour:
   pillTransform: {fileID: 5739814618813061400}
   audio: {fileID: 0}
   healClip: {fileID: 8300000, guid: b8a26785f434fce4bb0c1dc66ba29ae4, type: 3}
+  redPillMR: {fileID: 6939078570056753337}
+  vanishTimer: 10
+  flashLenght: 0.1

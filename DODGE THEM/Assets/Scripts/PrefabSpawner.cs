@@ -28,14 +28,15 @@ public class PrefabSpawner : MonoBehaviour
         spawnPosition = new Vector3(Random.Range(-7, 7), 15, Random.Range(-7, 7));                       
     }
 
+    //spawn method
     public void SpawnEnemy()
     {
         GameObject newInstance = Instantiate(enemy, spawnPosition, enemyTransform.rotation);
     }
 
+    //based on repeatTimer variable increases the spawn rate over time
     IEnumerator IncreaseSpawning(float repeatTimer)
     {
-        //yield return new WaitForSeconds(time);
        
         while(true)
         {

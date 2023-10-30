@@ -41,13 +41,8 @@ public class EnemyController : MonoBehaviour
         }     
 
     }
-    //spawn method
-    /*public void SpawnEnemy()
-    {
-        GameObject newInstance = Instantiate(enemy, spawnPosition, enemyTransform.rotation);
 
-    }*/
-
+    //collisions, once enemy collides with these tags, it does smt
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("DeadZone"))
@@ -61,6 +56,9 @@ public class EnemyController : MonoBehaviour
             }
             Destroy(enemy);
         }
+
+        //I keep this method in case I would like to make enemy PUSH the player
+
         /*else if (other.gameObject.CompareTag("Player"))
         {
             Rigidbody playerRigidbody = other.gameObject.GetComponent<Rigidbody>();

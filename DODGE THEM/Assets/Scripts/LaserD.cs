@@ -7,7 +7,7 @@ public class LaserD : MonoBehaviour
     Vector3 spawnPosition;
     public GameObject laser;
     public Transform transform;
-    public float speed = 0.10f;
+    public float speed = 0.07f;
     float respawnTimer;
 
    // public float spawnTime;
@@ -40,15 +40,15 @@ public class LaserD : MonoBehaviour
 
     }
 
-    //destroys the laser with given time period that can be modified from the inspector
+    //based on repeatTimer variable increases the spawn rate over time
     IEnumerator IncreaseSpeed(float respawnTimer)
     {
 
         while (true)
         {
-            if (speed <= 0.5f)
+            if (speed <= 0.4f)
             {
-                speed += 0.05f;
+                speed += 0.03f;
             }
 
             yield return new WaitForSeconds(respawnTimer);

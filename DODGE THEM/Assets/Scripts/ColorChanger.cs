@@ -28,6 +28,7 @@ public class ColorChanger : MonoBehaviour
         ColorChangeTime();
     }
 
+    //changes color of the background between set colors from inspector, they change over time
     void ColorChange()
     {
         cam.backgroundColor = Color.Lerp(cam.backgroundColor, colors[colorIndex], changeSpeed * Time.deltaTime);
@@ -46,7 +47,7 @@ public class ColorChanger : MonoBehaviour
             currentTime -= Time.deltaTime;
         }
     }
-
+    //Once all colours are exchanged, process starts from beginning
     void CheckColorIndex()
     {
         if(colorIndex >= colors.Length)

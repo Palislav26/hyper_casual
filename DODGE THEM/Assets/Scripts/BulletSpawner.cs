@@ -20,8 +20,8 @@ public class BulletSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spawnerTR = playerTr;
-
+        //setting up position that is same as the players
+        spawnerTR = playerTr;       
         spawnPosition = new Vector3(spawnerTR.position.x, spawnerTR.position.y, spawnerTR.position.z);
 
         if (Input.GetMouseButtonDown(0))
@@ -30,6 +30,7 @@ public class BulletSpawner : MonoBehaviour
         }
     }
 
+    //spawn method
     public void SpawnBullet()
     {
         Instantiate(bullet, spawnPosition, Quaternion.identity);

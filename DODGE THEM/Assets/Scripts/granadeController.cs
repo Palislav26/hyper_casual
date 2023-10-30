@@ -26,7 +26,7 @@ public class granadeController : MonoBehaviour
 
     void Start()
     {
-        //setting up values based on passed values in inspector
+        //values passed from the inspector
         TimeToBoom = boomTimer;
         flashTimer = flashLenght;
 
@@ -35,6 +35,7 @@ public class granadeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //granade blicks before explodes
         if (TimeToBoom > 0)
         {
             TimeToBoom -= Time.deltaTime;
@@ -46,6 +47,7 @@ public class granadeController : MonoBehaviour
                 flashTimer = flashLenght;
             }
 
+            //once its at 0 timer, it explodes
             if (TimeToBoom <= 0)
             {
                 ShockWave();              
@@ -55,6 +57,7 @@ public class granadeController : MonoBehaviour
         }
     }
 
+    //explosion that throws away nearby objects with colliders 
     public void ShockWave()
     {
         //assign position to the player
@@ -75,6 +78,7 @@ public class granadeController : MonoBehaviour
         }
     }
 
+    //does exactly what you would expect
     public void SpawnParticles()
     {
         ParticleSystem newInstance = Instantiate(ps, granade.transform.position, Quaternion.identity);
