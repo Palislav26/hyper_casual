@@ -64,7 +64,6 @@ public class PlayerController : MonoBehaviour
     public GameObject gun;
     public GameObject shotGun;
     public GameObject megaBulletPrefab;
-    public Transform sgFirePosition;
     public bool gunEquiped = true;
     public bool shotGunEquiped = false;
 
@@ -72,9 +71,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //currentAmmo = 0;
-        currentAmmo = 25;
-        //currentGranades = 0;
+        currentAmmo = 1000;
         currentGranades = 1;
 
         //gives us reference to the rigidbody of the player
@@ -113,14 +110,17 @@ public class PlayerController : MonoBehaviour
                 currentAmmo -= 1;
                 ammoCounter.DeductBullets(1);
             }
-            else if(shotGunEquiped == true && currentAmmo > 2)
+            else if(shotGunEquiped == true && currentAmmo > 1)
             {
-                GameObject megaBullet = Instantiate(megaBulletPrefab, sgFirePosition.position, Quaternion.identity); 
-                megaBullet.GetComponent<Rigidbody>().AddForce(transform.forward * 10000);
+                GameObject megaBullet = Instantiate(megaBulletPrefab, firePosition.position, Quaternion.identity);
+                GameObject megaBullet1 = Instantiate(megaBulletPrefab, firePosition.position, Quaternion.identity);
+                megaBullet.GetComponent<Rigidbody>().AddForce(transform.forward * 20000);
+                megaBullet1.GetComponent<Rigidbody>().AddForce(transform.forward * 20000);
                 audio.PlayOneShot(gunShot);
-                Destroy(megaBullet, 0.5f);
-                currentAmmo -= 3;
-                ammoCounter.DeductBullets(3);
+                Destroy(megaBullet, 0.2f);
+                Destroy(megaBullet1, 0.2f);
+                currentAmmo -= 2;
+                ammoCounter.DeductBullets(2);
             }
             else
             {

@@ -17,6 +17,7 @@ TagManager:
   - Jumper
   - Bullet
   - water
+  - MegaBullet
   layers:
   - Default
   - TransparentFX
@@ -31,7 +32,7 @@ TagManager:
   - Box
   - Bomber
   - Enemy
-  - 
+  - Platform
   - 
   - 
   - 
