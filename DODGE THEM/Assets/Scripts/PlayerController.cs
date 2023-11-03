@@ -61,6 +61,13 @@ public class PlayerController : MonoBehaviour
     public GameObject granadePrefab;
     public AmmoCounter ammoCounter;
 
+    public GameObject gun;
+    public GameObject shotGun;
+    public GameObject megaBulletPrefab;
+    public Transform sgFirePosition;
+    public bool gunEquiped = true;
+    public bool shotGunEquiped = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -97,12 +104,29 @@ public class PlayerController : MonoBehaviour
         //once player presses left mouse button, and has any ammo left, he shoots
         if (Input.GetMouseButtonDown(0) && currentAmmo > 0)
         {
-            GameObject bullet = Instantiate(bulletPrefab, firePosition.position, Quaternion.identity);
-            bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 10000);
-            audio.PlayOneShot(gunShot);
-            Destroy(bullet, 5);
-            currentAmmo -= 1;
-            ammoCounter.DeductBullets(1);
+            if(gunEquiped == true)
+            {
+                GameObject bullet = Instantiate(bulletPrefab, firePosition.position, Quaternion.identity);
+                bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 10000);
+                audio.PlayOneShot(gunShot);
+                Destroy(bullet, 5);
+                currentAmmo -= 1;
+                ammoCounter.DeductBullets(1);
+            }
+            else if(shotGunEquiped == true && currentAmmo > 2)
+            {
+                GameObject megaBullet = Instantiate(megaBulletPrefab, sgFirePosition.position, Quaternion.identity); 
+                megaBullet.GetComponent<Rigidbody>().AddForce(transform.forward * 10000);
+                audio.PlayOneShot(gunShot);
+                Destroy(megaBullet, 0.5f);
+                currentAmmo -= 3;
+                ammoCounter.DeductBullets(3);
+            }
+            else
+            {
+                audio.PlayOneShot(emptyMagazine);
+            }
+            
         }
         else if(Input.GetMouseButtonDown(0) && currentAmmo <= 0) //once the player tries to shoot and has no ammo, makes sound of empty magazine
         {
@@ -120,6 +144,20 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetMouseButtonDown(1) && currentGranades <= 0) // //once the player tries to shoot and has no granades, makes sound of empty granade launcher
         {
             audio.PlayOneShot(outOfGranades);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            gun.SetActive(true);
+            shotGun.SetActive(false);
+            gunEquiped = true;
+            shotGunEquiped = false;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            gun.SetActive(false);
+            shotGun.SetActive(true);
+            gunEquiped = false;
+            shotGunEquiped = true;
         }
 
         //assigning particles position with position of the player
