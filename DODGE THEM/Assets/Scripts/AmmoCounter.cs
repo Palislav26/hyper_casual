@@ -14,7 +14,7 @@ public class AmmoCounter : MonoBehaviour
     void Start()
     {
         //we tell UI how many ammunition player has at the start
-        numberOfBullets = 25;
+        numberOfBullets = 50;
         numberOfGranades = 1;
     }
 

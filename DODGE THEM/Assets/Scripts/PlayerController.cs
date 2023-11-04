@@ -46,6 +46,8 @@ public class PlayerController : MonoBehaviour
     public AudioClip emptyMagazine;
     public AudioClip outOfGranades;
     public AudioClip boom;
+    public AudioClip gunSwitch;
+    public AudioClip shotGunShot;
 
     public Transform playerTR;
     Vector3 mousePos;
@@ -71,7 +73,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentAmmo = 1000;
+        currentAmmo = 50;
         currentGranades = 1;
 
         //gives us reference to the rigidbody of the player
@@ -110,15 +112,18 @@ public class PlayerController : MonoBehaviour
                 currentAmmo -= 1;
                 ammoCounter.DeductBullets(1);
             }
-            else if(shotGunEquiped == true && currentAmmo > 1)
+            else if(shotGunEquiped == true && currentAmmo > 1) //shotgun - same logic
             {
                 GameObject megaBullet = Instantiate(megaBulletPrefab, firePosition.position, Quaternion.identity);
                 GameObject megaBullet1 = Instantiate(megaBulletPrefab, firePosition.position, Quaternion.identity);
+                GameObject megaBullet2 = Instantiate(megaBulletPrefab, firePosition.position, Quaternion.identity);
                 megaBullet.GetComponent<Rigidbody>().AddForce(transform.forward * 20000);
                 megaBullet1.GetComponent<Rigidbody>().AddForce(transform.forward * 20000);
-                audio.PlayOneShot(gunShot);
+                megaBullet2.GetComponent<Rigidbody>().AddForce(transform.forward * 20000);
+                audio.PlayOneShot(shotGunShot);
                 Destroy(megaBullet, 0.2f);
                 Destroy(megaBullet1, 0.2f);
+                Destroy(megaBullet2, 0.2f);
                 currentAmmo -= 2;
                 ammoCounter.DeductBullets(2);
             }
@@ -145,19 +150,21 @@ public class PlayerController : MonoBehaviour
         {
             audio.PlayOneShot(outOfGranades);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha1))
+        else if (Input.GetKeyDown(KeyCode.Alpha1)) // switching weapons
         {
             gun.SetActive(true);
             shotGun.SetActive(false);
             gunEquiped = true;
             shotGunEquiped = false;
+            audio.PlayOneShot(gunSwitch);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetKeyDown(KeyCode.Alpha2)) // switching weapons
         {
             gun.SetActive(false);
             shotGun.SetActive(true);
             gunEquiped = false;
             shotGunEquiped = true;
+            audio.PlayOneShot(gunSwitch);
         }
 
         //assigning particles position with position of the player
@@ -329,7 +336,7 @@ public class PlayerController : MonoBehaviour
         {
             audio.PlayOneShot(reloadAmmo); 
             
-            currentAmmo += 25;
+            currentAmmo += 50;
             
         }
         else if (other.gameObject.CompareTag("Jumper"))
