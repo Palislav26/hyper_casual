@@ -170,6 +170,7 @@ MonoBehaviour:
   scoreSystem: {fileID: 0}
   exitMsg: {fileID: 0}
   ps: {fileID: 0}
+  gunFirePS: {fileID: 0}
   radius: 50
   explosionPower: 10000
   maxHealth: 5
@@ -181,9 +182,25 @@ MonoBehaviour:
   audio: {fileID: 1133845723}
   jumpClip: {fileID: 8300000, guid: 1402c747f1091b540941620b26d3da38, type: 3}
   bounceClip: {fileID: 8300000, guid: 57c64d804b0b165499fb64725ba562f3, type: 3}
+  gunShot: {fileID: 0}
+  reloadAmmo: {fileID: 0}
+  emptyMagazine: {fileID: 0}
+  outOfGranades: {fileID: 0}
+  boom: {fileID: 0}
+  gunSwitch: {fileID: 0}
+  shotGunShot: {fileID: 0}
   playerTR: {fileID: 4041314655499568422}
+  currentAmmo: 0
+  currentGranades: 0
   bulletPrefab: {fileID: 3583924379234950907, guid: 2ffbf7eb0a3e9b84abaf5af0ded95fe0, type: 3}
   firePosition: {fileID: 995269325}
+  granadePrefab: {fileID: 0}
+  ammoCounter: {fileID: 0}
+  gun: {fileID: 0}
+  shotGun: {fileID: 0}
+  megaBulletPrefab: {fileID: 0}
+  gunEquiped: 1
+  shotGunEquiped: 0
 --- !u!82 &1133845723
 AudioSource:
   m_ObjectHideFlags: 0

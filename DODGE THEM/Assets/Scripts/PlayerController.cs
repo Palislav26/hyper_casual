@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     public ScoreSystem scoreSystem;
     public GameObject exitMsg;
     public ParticleSystem ps;
+    public ParticleSystem gunFirePS;
 
     public float radius;
     public float explosionPower;
@@ -124,6 +125,7 @@ public class PlayerController : MonoBehaviour
                 Destroy(megaBullet, 0.1f);
                 Destroy(megaBullet1, 0.1f);
                 Destroy(megaBullet2, 0.1f);
+                SpawnParticles();
                 currentAmmo -= 2;
                 ammoCounter.DeductBullets(2);
             }
@@ -388,5 +390,13 @@ public class PlayerController : MonoBehaviour
     void PlayBoomSound() 
     {             
             audio.PlayOneShot(boom);    
+    }
+
+    // Spawn particles
+    public void SpawnParticles()
+    {
+        ParticleSystem newInstance = Instantiate(gunFirePS, gameObject.transform.position, Quaternion.identity);
+        newInstance.Play();
+        Destroy(newInstance, 5);
     }
 }
