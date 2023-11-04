@@ -121,9 +121,9 @@ public class PlayerController : MonoBehaviour
                 megaBullet1.GetComponent<Rigidbody>().AddForce(transform.forward * 20000);
                 megaBullet2.GetComponent<Rigidbody>().AddForce(transform.forward * 20000);
                 audio.PlayOneShot(shotGunShot);
-                Destroy(megaBullet, 0.2f);
-                Destroy(megaBullet1, 0.2f);
-                Destroy(megaBullet2, 0.2f);
+                Destroy(megaBullet, 0.1f);
+                Destroy(megaBullet1, 0.1f);
+                Destroy(megaBullet2, 0.1f);
                 currentAmmo -= 2;
                 ammoCounter.DeductBullets(2);
             }
@@ -302,7 +302,14 @@ public class PlayerController : MonoBehaviour
         {
             TakeDamage(5);
             //if player is under immortality timer, this will "kill" him instead
-            gameObject.SetActive(false);
+            if(currentHealth == 1)
+            {
+                TakeDamage(1); //fixing bug - one health error
+            }
+            else 
+            {
+                gameObject.SetActive(false);
+            }         
         }
         else if (other.gameObject.CompareTag("Laser"))
         {
@@ -321,8 +328,6 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("BluePill"))
         {
-            //ShockWave();
-            //ps.Play();
             audio.PlayOneShot(reloadAmmo);
             currentGranades += 1;
         }
@@ -334,9 +339,10 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Ammo"))
         {
-            audio.PlayOneShot(reloadAmmo); 
-            
+            audio.PlayOneShot(reloadAmmo);
+
             currentAmmo += 50;
+            ammoCounter.AddBullets(25);
             
         }
         else if (other.gameObject.CompareTag("Jumper"))

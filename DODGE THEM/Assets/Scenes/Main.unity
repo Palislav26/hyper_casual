@@ -355,6 +355,10 @@ PrefabInstance:
       value: Tile_TreeV1
       objectReference: {fileID: 0}
     - target: {fileID: 4939689435744760104, guid: d0713c6354bd67147a06036826a460f9, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939689435744760104, guid: d0713c6354bd67147a06036826a460f9, type: 3}
       propertyPath: m_TagString
       value: water
       objectReference: {fileID: 0}
@@ -427,6 +431,10 @@ PrefabInstance:
     - target: {fileID: 4939689435744760104, guid: d0713c6354bd67147a06036826a460f9, type: 3}
       propertyPath: m_Name
       value: Tile_TreeV1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939689435744760104, guid: d0713c6354bd67147a06036826a460f9, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4939689435744760104, guid: d0713c6354bd67147a06036826a460f9, type: 3}
       propertyPath: m_TagString
@@ -667,6 +675,10 @@ PrefabInstance:
     - target: {fileID: 8175965233832887118, guid: 90e82e4a9b9809f47978b97c8a749572, type: 3}
       propertyPath: m_Name
       value: Tile_Acc_RockWGrassV1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8175965233832887118, guid: 90e82e4a9b9809f47978b97c8a749572, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8175965233832887118, guid: 90e82e4a9b9809f47978b97c8a749572, type: 3}
       propertyPath: m_TagString
@@ -1029,6 +1041,10 @@ PrefabInstance:
       value: Tile_TreeV1 (4)
       objectReference: {fileID: 0}
     - target: {fileID: 4939689435744760104, guid: d0713c6354bd67147a06036826a460f9, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939689435744760104, guid: d0713c6354bd67147a06036826a460f9, type: 3}
       propertyPath: m_TagString
       value: water
       objectReference: {fileID: 0}
@@ -1238,6 +1254,10 @@ PrefabInstance:
     - target: {fileID: 8175965233832887118, guid: 90e82e4a9b9809f47978b97c8a749572, type: 3}
       propertyPath: m_Name
       value: Tile_Acc_RockWGrassV1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8175965233832887118, guid: 90e82e4a9b9809f47978b97c8a749572, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8175965233832887118, guid: 90e82e4a9b9809f47978b97c8a749572, type: 3}
       propertyPath: m_TagString
@@ -3894,6 +3914,10 @@ PrefabInstance:
       value: Tile_Acc_RockWGrassV1 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 8175965233832887118, guid: 90e82e4a9b9809f47978b97c8a749572, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8175965233832887118, guid: 90e82e4a9b9809f47978b97c8a749572, type: 3}
       propertyPath: m_TagString
       value: Platform
       objectReference: {fileID: 0}
@@ -4192,6 +4216,10 @@ PrefabInstance:
       value: Tile_TreeV1 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4939689435744760104, guid: d0713c6354bd67147a06036826a460f9, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939689435744760104, guid: d0713c6354bd67147a06036826a460f9, type: 3}
       propertyPath: m_TagString
       value: water
       objectReference: {fileID: 0}
@@ -4379,6 +4407,10 @@ PrefabInstance:
     - target: {fileID: 8175965233832887118, guid: 90e82e4a9b9809f47978b97c8a749572, type: 3}
       propertyPath: m_Name
       value: Tile_Acc_RockWGrassV1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8175965233832887118, guid: 90e82e4a9b9809f47978b97c8a749572, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8175965233832887118, guid: 90e82e4a9b9809f47978b97c8a749572, type: 3}
       propertyPath: m_TagString
@@ -4599,6 +4631,10 @@ PrefabInstance:
       value: Tile_TreeV1 (3)
       objectReference: {fileID: 0}
     - target: {fileID: 4939689435744760104, guid: d0713c6354bd67147a06036826a460f9, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939689435744760104, guid: d0713c6354bd67147a06036826a460f9, type: 3}
       propertyPath: m_TagString
       value: water
       objectReference: {fileID: 0}
@@ -4764,6 +4800,10 @@ PrefabInstance:
     - target: {fileID: 4939689435744760104, guid: d0713c6354bd67147a06036826a460f9, type: 3}
       propertyPath: m_Name
       value: Tile_TreeV1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939689435744760104, guid: d0713c6354bd67147a06036826a460f9, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4939689435744760104, guid: d0713c6354bd67147a06036826a460f9, type: 3}
       propertyPath: m_TagString
@@ -5467,6 +5507,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1864811812}
     - target: {fileID: 4041314655499568423, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
+      propertyPath: gunSwitch
+      value: 
+      objectReference: {fileID: 8300000, guid: a6cfdcd5bc86ebb49bf6b107ee047918, type: 3}
+    - target: {fileID: 4041314655499568423, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 945547145}
@@ -5482,6 +5526,10 @@ PrefabInstance:
       propertyPath: scoreSystem
       value: 
       objectReference: {fileID: 1711307546}
+    - target: {fileID: 4041314655499568423, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
+      propertyPath: shotGunShot
+      value: 
+      objectReference: {fileID: 8300000, guid: d8728f93fbb9a5a4ca3738e1cf06bca2, type: 3}
     - target: {fileID: 4041314655499568423, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
       propertyPath: emptyMagazine
       value: 
