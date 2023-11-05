@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8124679193108796271}
   - component: {fileID: 536175959489040014}
   - component: {fileID: 3963884236826868882}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Red Pill
   m_TagString: RedPill
   m_Icon: {fileID: 0}
@@ -132,6 +132,3 @@ MonoBehaviour:
   pillTransform: {fileID: 5739814618813061400}
   audio: {fileID: 0}
   healClip: {fileID: 8300000, guid: b8a26785f434fce4bb0c1dc66ba29ae4, type: 3}
-  redPillMR: {fileID: 6939078570056753337}
-  vanishTimer: 10
-  flashLenght: 0.1

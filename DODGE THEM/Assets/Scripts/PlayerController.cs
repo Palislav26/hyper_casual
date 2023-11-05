@@ -378,7 +378,8 @@ public class PlayerController : MonoBehaviour
     void LookAtTheMouse()
     {
         mousePos = Input.mousePosition;
-        mousePos.z = 5.23f; //The distance between the camera and object
+        //mousePos.z = 5.23f; //The distance between the camera and object
+        mousePos.z = -0.4f;
         objectPos = Camera.main.WorldToScreenPoint(playerTR.position);
         mousePos.x = mousePos.x - objectPos.x;
         mousePos.y = mousePos.y - objectPos.y;
@@ -395,7 +396,7 @@ public class PlayerController : MonoBehaviour
     // Spawn particles
     public void SpawnParticles()
     {
-        ParticleSystem newInstance = Instantiate(gunFirePS, gameObject.transform.position, Quaternion.identity);
+        ParticleSystem newInstance = Instantiate(gunFirePS, gunFirePS.transform.position, gameObject.transform.rotation);
         newInstance.Play();
         Destroy(newInstance, 5);
     }

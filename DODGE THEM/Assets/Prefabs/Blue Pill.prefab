@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7017656285507227161}
   - component: {fileID: 6391918031906348093}
   - component: {fileID: 7966976959591535643}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Blue Pill
   m_TagString: BluePill
   m_Icon: {fileID: 0}

@@ -5301,25 +5301,57 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 356512505}
     m_Modifications:
+    - target: {fileID: 2122258504079642625, guid: 127cc5e540e5d6f40bd5df7ce3475c61, type: 3}
+      propertyPath: TrailModule.mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122258504079642625, guid: 127cc5e540e5d6f40bd5df7ce3475c61, type: 3}
+      propertyPath: moveWithTransform
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122258504079642625, guid: 127cc5e540e5d6f40bd5df7ce3475c61, type: 3}
+      propertyPath: TrailModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122258504079642625, guid: 127cc5e540e5d6f40bd5df7ce3475c61, type: 3}
+      propertyPath: TrailModule.textureMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2122258504079642628, guid: 127cc5e540e5d6f40bd5df7ce3475c61, type: 3}
       propertyPath: m_Name
       value: GunFire Particles
       objectReference: {fileID: 0}
+    - target: {fileID: 2122258504079642630, guid: 127cc5e540e5d6f40bd5df7ce3475c61, type: 3}
+      propertyPath: m_SortMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122258504079642630, guid: 127cc5e540e5d6f40bd5df7ce3475c61, type: 3}
+      propertyPath: m_RenderAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122258504079642630, guid: 127cc5e540e5d6f40bd5df7ce3475c61, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122258504079642630, guid: 127cc5e540e5d6f40bd5df7ce3475c61, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 2122258504079642631, guid: 127cc5e540e5d6f40bd5df7ce3475c61, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2122258504079642631, guid: 127cc5e540e5d6f40bd5df7ce3475c61, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.099999994
+      value: 0.074
       objectReference: {fileID: 0}
     - target: {fileID: 2122258504079642631, guid: 127cc5e540e5d6f40bd5df7ce3475c61, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.19
+      value: 0.47
       objectReference: {fileID: 0}
     - target: {fileID: 2122258504079642631, guid: 127cc5e540e5d6f40bd5df7ce3475c61, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.4
+      value: 1.655
       objectReference: {fileID: 0}
     - target: {fileID: 2122258504079642631, guid: 127cc5e540e5d6f40bd5df7ce3475c61, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5474,11 +5506,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 995269325, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.01
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 995269325, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 995269325, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.2
+      value: 1.36
       objectReference: {fileID: 0}
     - target: {fileID: 995269325, guid: 2666a5672fa36054b98583059ea12b01, type: 3}
       propertyPath: m_LocalRotation.w
