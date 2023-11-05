@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShowCredits : MonoBehaviour
-{
-    public GameObject credits;
+public class ShowHowToPlay : MonoBehaviour
+{   
+    public GameObject howToPlay;
     public GameObject playButton;
     public GameObject creditsButton;
     public GameObject howToPlayButton;
     public GameObject exitButton;
 
     //simply opens hidden credits UI
-    public void StartCredits()
+    public void ShowControls() 
     {
-        credits.SetActive(true);
+        howToPlay.SetActive(true);
         playButton.SetActive(false);
         creditsButton.SetActive(false);
         howToPlayButton.SetActive(false);
@@ -25,7 +25,7 @@ public class ShowCredits : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Escape))
         {
-            credits.SetActive(false);
+            howToPlay.SetActive(false);
             playButton.SetActive(true);
             creditsButton.SetActive(true);
             howToPlayButton.SetActive(true);
