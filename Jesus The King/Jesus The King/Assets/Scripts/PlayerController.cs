@@ -10,6 +10,10 @@ public class PlayerController : MonoBehaviour
     Vector2 moveDirection;
     float vertical;
     [SerializeField] float speed;
+    public ParticleSystem ps1;
+    public ParticleSystem ps2;
+    public ParticleSystem ps3;
+    public ParticleSystem ps4;
 
     // Start is called before the first frame update
     void Start()
@@ -24,11 +28,34 @@ public class PlayerController : MonoBehaviour
         movementX = Input.GetAxisRaw("Horizontal");
         movementY = Input.GetAxisRaw("Vertical");
         moveDirection = new Vector2(movementX, movementY).normalized;
+
+        Shooting();
     }
 
     void FixedUpdate()
     {
         rb.velocity = new Vector2(moveDirection.x * speed, moveDirection.y * speed);
+    }
+
+    public void Shooting()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            ps1.Play();
+        }
+        else if (Input.GetKeyDown(KeyCode.L))
+        {
+            ps2.Play();
+        }
+        else if (Input.GetKeyDown(KeyCode.K))
+        {
+            ps3.Play();
+        }
+        else if (Input.GetKeyDown(KeyCode.J))
+        {
+            ps4.Play();
+        }
+
     }
 }
 
