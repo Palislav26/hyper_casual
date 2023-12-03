@@ -8,21 +8,38 @@ public class NaziBehavour : MonoBehaviour
     public float moveSpeed;
     public Transform player;
     public Rigidbody2D rb;
+    public int health;
+    public int fullHealth;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        health = fullHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
+        KillNazi();
+    }
+
+    void FixedUpdate()
+    {
+
         if (Vector3.Distance(transform.position, player.transform.position - transform.position) < rangeToChace)
         {          
                 transform.position = rb.position;
                       
                 transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);            
+        }
+    }
+
+    void KillNazi()
+    {
+        if(health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }
