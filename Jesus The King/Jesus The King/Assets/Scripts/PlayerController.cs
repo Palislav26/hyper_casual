@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem ps3;
     public ParticleSystem ps4;
 
+    public GameObject bullet;
+
     // Start is called before the first frame update
     void Start()
     {
