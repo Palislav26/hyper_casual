@@ -9,11 +9,14 @@ public class EnemyScript : MonoBehaviour
     public float moveSpeed;
     public Transform player;
     public Rigidbody2D rb;
+    int health;
+    public int fullHealth;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        health = fullHealth;
     }
 
     // Update is called once per frame
@@ -29,6 +32,24 @@ public class EnemyScript : MonoBehaviour
             {
                 transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
             }
+        }
+
+        KillEnemy();
+    }
+
+    void KillEnemy()
+    {
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            health -= 1;
         }
     }
 }

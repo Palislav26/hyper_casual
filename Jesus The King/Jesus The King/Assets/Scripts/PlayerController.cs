@@ -15,13 +15,14 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem ps3;
     public ParticleSystem ps4;
 
-    public GameObject bullet;
+    public int maxHealth;
+    int health;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        health = maxHealth;
     }
 
     // Update is called once per frame
@@ -31,7 +32,8 @@ public class PlayerController : MonoBehaviour
         movementY = Input.GetAxisRaw("Vertical");
         moveDirection = new Vector2(movementX, movementY).normalized;
 
-        Shooting();
+        ShootingParticles();
+        KillPlayer();
     }
 
     void FixedUpdate()
@@ -39,7 +41,7 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(moveDirection.x * speed, moveDirection.y * speed);
     }
 
-    public void Shooting()
+    public void ShootingParticles()
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
@@ -58,6 +60,22 @@ public class PlayerController : MonoBehaviour
             ps4.Play();
         }
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("enemy"))
+        {
+            health -= 1;
+        }
+    }
+
+    void KillPlayer()
+    {
+        if(health <= 0)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }
 

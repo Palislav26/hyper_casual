@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7087176038703376563}
   - component: {fileID: 1293175044332806828}
   - component: {fileID: -7523455571959835265}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bullet 3
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1293175044332806828}
-  speed: 10
+  speed: 15
 --- !u!50 &1293175044332806828
 Rigidbody2D:
   serializedVersion: 4

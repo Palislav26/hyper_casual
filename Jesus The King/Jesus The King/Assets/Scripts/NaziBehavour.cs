@@ -8,7 +8,7 @@ public class NaziBehavour : MonoBehaviour
     public float moveSpeed;
     public Transform player;
     public Rigidbody2D rb;
-    public int health;
+    int health;
     public int fullHealth;
 
     // Start is called before the first frame update

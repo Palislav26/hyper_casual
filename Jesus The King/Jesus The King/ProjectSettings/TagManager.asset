@@ -6,6 +6,7 @@ TagManager:
   tags:
   - HolyWater
   - Bullet
+  - enemy
   layers:
   - Default
   - TransparentFX
@@ -13,8 +14,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - holy water
+  - bullet
   - 
   - 
   - 

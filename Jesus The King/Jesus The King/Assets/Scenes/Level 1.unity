@@ -232,7 +232,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980391309}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.75384617, y: -0.05919997, z: 0.083284125}
+  m_LocalPosition: {x: 0.68, y: -0.05919997, z: 0.083284125}
   m_LocalScale: {x: 1.5384616, y: 0.6666667, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 1010453268}
   - component: {fileID: 1010453270}
   - component: {fileID: 1010453269}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Holy Water Ps 3
   m_TagString: HolyWater
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1010453267}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.02, y: -0.755, z: 0.07947331}
+  m_LocalPosition: {x: -0.02, y: -0.741, z: 0.07947331}
   m_LocalScale: {x: 1.5384616, y: 1, z: 0.6666667}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3937,7 +3937,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     type: 1
     collisionMode: 1
@@ -5103,7 +5103,7 @@ MonoBehaviour:
   ps2: {fileID: 2044519788}
   ps3: {fileID: 1010453270}
   ps4: {fileID: 2094315768}
-  bullet: {fileID: 0}
+  maxHealth: 3
 --- !u!212 &1151188292
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5251,7 +5251,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1541578521}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.015384613, y: -0.6858666, z: 0.083284125}
+  m_LocalPosition: {x: -0.015384613, y: -0.579, z: 0.083284125}
   m_LocalScale: {x: 1.5384616, y: 0.6666667, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5283,7 +5283,7 @@ GameObject:
   - component: {fileID: 1595705071}
   - component: {fileID: 1595705070}
   - component: {fileID: 1595705069}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Holy Water Ps 1
   m_TagString: HolyWater
   m_Icon: {fileID: 0}
@@ -8941,7 +8941,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     type: 1
     collisionMode: 1
@@ -10077,7 +10077,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595705068}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0.727, z: 0.07947331}
+  m_LocalPosition: {x: 0.02, y: 0.781, z: 0.07947331}
   m_LocalScale: {x: 1.5384616, y: 1, z: 0.6666667}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10109,7 +10109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1955169628}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8769231, y: -0.085866615, z: 0.083284125}
+  m_LocalPosition: {x: -0.74, y: -0.085866615, z: 0.083284125}
   m_LocalScale: {x: 1.5384616, y: 0.6666667, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10141,7 +10141,7 @@ GameObject:
   - component: {fileID: 2044519786}
   - component: {fileID: 2044519788}
   - component: {fileID: 2044519787}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Holy Water Ps 2
   m_TagString: HolyWater
   m_Icon: {fileID: 0}
@@ -10156,7 +10156,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2044519785}
   m_LocalRotation: {x: -0.4937573, y: 0.50616574, z: -0.50616574, w: 0.4937573}
-  m_LocalPosition: {x: 1.04, y: -0.001000007, z: 0.07947331}
+  m_LocalPosition: {x: 1.02, y: -0.001000007, z: 0.07947331}
   m_LocalScale: {x: 1.5384616, y: 1, z: 0.6666667}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13814,7 +13814,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     type: 1
     collisionMode: 1
@@ -14953,7 +14953,7 @@ GameObject:
   - component: {fileID: 2094315766}
   - component: {fileID: 2094315768}
   - component: {fileID: 2094315767}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Holy Water Ps 4
   m_TagString: HolyWater
   m_Icon: {fileID: 0}
@@ -14968,7 +14968,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094315765}
   m_LocalRotation: {x: -0.4896421, y: -0.5101477, z: 0.5101477, w: 0.4896421}
-  m_LocalPosition: {x: -1.07, y: -0.004, z: 0.07947331}
+  m_LocalPosition: {x: -1.04, y: -0.004, z: 0.07947331}
   m_LocalScale: {x: 1.5384616, y: 1, z: 0.6666667}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18626,7 +18626,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     type: 1
     collisionMode: 1
@@ -19779,7 +19779,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138182321}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.030769225, y: 0.5608001, z: 0.083284125}
+  m_LocalPosition: {x: -0.030769225, y: 0.56, z: 0.083284125}
   m_LocalScale: {x: 1.5384616, y: 0.6666667, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19859,10 +19859,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1706141847364749227, guid: 69e5f220cf1d71e459f03425bc142e8b, type: 3}
-      propertyPath: m_BodyType
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69e5f220cf1d71e459f03425bc142e8b, type: 3}
 --- !u!1001 &5809998427950427218
@@ -19880,10 +19876,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1151188293}
-    - target: {fileID: 5809998428662836779, guid: 256c5e14fdfd64443a6347f9c830871d, type: 3}
-      propertyPath: m_BodyType
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5809998428662836782, guid: 256c5e14fdfd64443a6347f9c830871d, type: 3}
       propertyPath: m_RootOrder
       value: 3
