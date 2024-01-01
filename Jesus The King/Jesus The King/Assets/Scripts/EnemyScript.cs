@@ -12,6 +12,10 @@ public class EnemyScript : MonoBehaviour
     int health;
     public int fullHealth;
 
+    public GameObject bullet;
+    public Transform shootPos;
+    float timer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +31,13 @@ public class EnemyScript : MonoBehaviour
             if (Vector3.Distance(transform.position, player.transform.position - transform.position) < rangeToShoot)
             {
                 transform.position = rb.position;
+
+                timer += Time.deltaTime;
+                if (timer > 2)
+                {
+                    timer = 0;
+                    shoot();
+                }
             }
             else if(Vector3.Distance(transform.position, player.transform.position - transform.position) > rangeToShoot)
             {
@@ -35,6 +46,12 @@ public class EnemyScript : MonoBehaviour
         }
 
         KillEnemy();
+       
+    }
+
+    void shoot()
+    {
+        Instantiate(bullet, shootPos.position, Quaternion.identity);
     }
 
     void KillEnemy()

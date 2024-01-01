@@ -68,6 +68,10 @@ public class PlayerController : MonoBehaviour
         {
             health -= 1;
         }
+        else if (collision.gameObject.CompareTag("EnemyBullet"))
+        {
+            health -= 1;
+        }
     }
 
     void KillPlayer()
