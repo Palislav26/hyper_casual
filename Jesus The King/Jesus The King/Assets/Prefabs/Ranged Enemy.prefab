@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rangeToChace: 10
   rangeToShoot: 3
-  moveSpeed: 1
+  moveSpeed: 0.75
   player: {fileID: 0}
   rb: {fileID: 1706141847364749227}
   fullHealth: 3
