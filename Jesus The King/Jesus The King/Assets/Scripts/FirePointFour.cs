@@ -7,6 +7,8 @@ public class FirePointFour : MonoBehaviour
     public GameObject bullet;
     public GameObject firePoint4;
 
+    public PlayerController playerController;
+
     // Start is called before the first frame update
     void Start()
     {

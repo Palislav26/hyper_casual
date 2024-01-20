@@ -15,14 +15,26 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem ps3;
     public ParticleSystem ps4;
 
+    public GameObject f1;
+    public GameObject f2;
+    public GameObject f3;
+    public GameObject f4;
+
     public int maxHealth;
     int health;
+
+    public float maxWater = 100;
+    public float currentWater;
+    public WaterControl waterControl;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         health = maxHealth;
+
+        currentWater = maxWater;
+        waterControl.SetMaxWater(maxWater);
     }
 
     // Update is called once per frame
@@ -44,20 +56,56 @@ public class PlayerController : MonoBehaviour
     public void ShootingParticles()
     {
         if (Input.GetKeyDown(KeyCode.I))
-        {
-            ps1.Play();
+        {          
+            if(currentWater >= 0)
+            {
+                ReduceWater(5);
+                ps1.Play();
+                f1.SetActive(true);
+            }
+            else
+            {
+                f1.SetActive(false);
+            }         
         }
         else if (Input.GetKeyDown(KeyCode.L))
-        {
-            ps2.Play();
+        {            
+            if (currentWater >= 0)
+            {
+                ReduceWater(5);
+                ps2.Play();
+                f2.SetActive(true);
+            }
+            else
+            {
+                f2.SetActive(false);
+            }
         }
         else if (Input.GetKeyDown(KeyCode.K))
-        {
-            ps3.Play();
+        {            
+            if (currentWater >= 0)
+            {
+                ReduceWater(5);
+                ps3.Play();
+                f3.SetActive(true);
+            }
+            else
+            {
+                f3.SetActive(false);
+            }
         }
         else if (Input.GetKeyDown(KeyCode.J))
-        {
-            ps4.Play();
+        {           
+            if (currentWater >= 0)
+            {
+                ReduceWater(5);
+                ps4.Play();
+                f4.SetActive(true);
+            }
+            else
+            {
+                f4.SetActive(false);
+            }
         }
 
     }
@@ -80,6 +128,12 @@ public class PlayerController : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+    }
+
+    public void ReduceWater(float water)
+    {
+        currentWater -= water;
+        waterControl.SetWater(currentWater);
     }
 }
 

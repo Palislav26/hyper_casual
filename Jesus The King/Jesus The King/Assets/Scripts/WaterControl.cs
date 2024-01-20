@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaterControl : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Slider slider;
+
+    public void SetWater(float water)
     {
-        
+        slider.value = water;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetMaxWater(float water)
     {
-        
+        slider.value = water;
+        slider.maxValue = water;
     }
 }
