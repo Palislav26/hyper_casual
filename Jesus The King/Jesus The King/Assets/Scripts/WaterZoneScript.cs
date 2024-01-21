@@ -8,7 +8,7 @@ public class WaterZoneScript : MonoBehaviour
 
     IEnumerator RestoreWater()
     {     
-        for(float currentWater = playerController.currentWater; currentWater < 100; currentWater += 0.005f)
+        for(float currentWater = playerController.currentWater; currentWater < 100; currentWater += 0.00005f)
         {
             playerController.currentWater = currentWater;
         }

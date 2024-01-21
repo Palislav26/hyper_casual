@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     public float currentWater;
     public WaterControl waterControl;
 
+    public bool hasKey = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -119,6 +121,10 @@ public class PlayerController : MonoBehaviour
         else if (collision.gameObject.CompareTag("EnemyBullet"))
         {
             health -= 1;
+        }
+        else if (collision.gameObject.CompareTag("Key"))
+        {
+            hasKey = true;
         }
     }
 

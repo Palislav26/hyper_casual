@@ -9,6 +9,8 @@ TagManager:
   - enemy
   - EnemyBullet
   - WaterZone
+  - LockedWall
+  - Key
   layers:
   - Default
   - TransparentFX
