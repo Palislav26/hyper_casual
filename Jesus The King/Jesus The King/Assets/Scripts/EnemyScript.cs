@@ -13,14 +13,19 @@ public class EnemyScript : MonoBehaviour
     public int fullHealth;
 
     public GameObject bullet;
+    public GameObject key;
+    public GameObject coin;
     public Transform shootPos;
     float timer;
+
+    public int randomNum;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         health = fullHealth;
+        randomNum = Random.Range(0, 3);
     }
 
     // Update is called once per frame
@@ -68,5 +73,22 @@ public class EnemyScript : MonoBehaviour
         {
             health -= 1;
         }
+    }
+
+    private void OnDestroy()
+    {
+        if(randomNum == 0)
+        {
+            Instantiate(key, transform.position, Quaternion.identity);
+        }
+        else if(randomNum == 1)
+        {
+            Instantiate(coin, transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(key, transform.position, Quaternion.identity);
+            Instantiate(coin, transform.position, Quaternion.identity);
+        }      
     }
 }

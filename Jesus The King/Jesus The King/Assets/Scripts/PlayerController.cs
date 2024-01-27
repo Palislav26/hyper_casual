@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,6 +21,11 @@ public class PlayerController : MonoBehaviour
     public GameObject f3;
     public GameObject f4;
 
+    public TMP_Text coinText;
+    public TMP_Text keyText;
+    private int coinsNum;
+    private int keysNum;
+
     public int maxHealth;
     int health;
 
@@ -37,6 +43,9 @@ public class PlayerController : MonoBehaviour
 
         currentWater = maxWater;
         waterControl.SetMaxWater(maxWater);
+
+        coinText.text = "";
+        keyText.text = "";
     }
 
     // Update is called once per frame
@@ -48,6 +57,14 @@ public class PlayerController : MonoBehaviour
 
         ShootingParticles();
         KillPlayer();
+
+        coinText.text = "" + coinsNum;
+        keyText.text = "" + keysNum;
+
+        if(keysNum > 0)
+        {
+            hasKey = true;
+        }
     }
 
     void FixedUpdate()
@@ -124,7 +141,22 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Key"))
         {
-            hasKey = true;
+            keysNum = keysNum + 1;
+        }
+        else if (collision.gameObject.CompareTag("Coin"))
+        {
+            coinsNum = coinsNum + 1;
+        }
+        else if (collision.gameObject.CompareTag("LockedWall"))
+        {
+            if(keysNum == 0)
+            {
+
+            }
+            else
+            {
+                keysNum = keysNum - 1;
+            }           
         }
     }
 

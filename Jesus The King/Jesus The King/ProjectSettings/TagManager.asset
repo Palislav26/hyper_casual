@@ -11,6 +11,7 @@ TagManager:
   - WaterZone
   - LockedWall
   - Key
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - ranged enemy
   - enemy bullet
   - nazi enemy
-  - 
+  - item
   - 
   - 
   - 
