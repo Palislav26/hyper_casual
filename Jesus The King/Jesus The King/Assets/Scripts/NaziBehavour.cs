@@ -11,11 +11,16 @@ public class NaziBehavour : MonoBehaviour
     int health;
     public int fullHealth;
 
+    public GameObject key;
+    public GameObject coin;
+    private int randomNum;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         health = fullHealth;
+        randomNum = Random.Range(0, 4);
     }
 
     // Update is called once per frame
@@ -48,6 +53,32 @@ public class NaziBehavour : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             health -= 1;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (randomNum == 0)
+        {
+            Instantiate(key, transform.position, Quaternion.identity);
+        }
+        else if (randomNum == 1)
+        {
+            Instantiate(coin, transform.position, Quaternion.identity);
+        }
+        else if (randomNum == 2)
+        {
+            Instantiate(key, transform.position, Quaternion.identity);
+            Instantiate(coin, transform.position, Quaternion.identity);
+        }
+        else if (randomNum == 3)
+        {
+            Instantiate(coin, transform.position, Quaternion.identity);
+            Instantiate(coin, transform.position, Quaternion.identity);
+        }
+        else
+        {
+
         }
     }
 }

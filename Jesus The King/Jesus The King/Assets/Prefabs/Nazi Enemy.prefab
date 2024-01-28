@@ -104,6 +104,8 @@ MonoBehaviour:
   player: {fileID: 0}
   rb: {fileID: 5809998428662836779}
   fullHealth: 5
+  key: {fileID: 2774323842780581246, guid: 42a712e2991bb7a4b8d10fb7d4cadec6, type: 3}
+  coin: {fileID: 5161470898647669374, guid: ef1aaeb13c274d74989d92dda3ca9a41, type: 3}
 --- !u!50 &5809998428662836779
 Rigidbody2D:
   serializedVersion: 4

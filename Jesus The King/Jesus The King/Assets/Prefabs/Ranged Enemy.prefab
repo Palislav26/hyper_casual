@@ -107,6 +107,8 @@ MonoBehaviour:
   rb: {fileID: 1706141847364749227}
   fullHealth: 3
   bullet: {fileID: 1525792628941454931, guid: ec3a58b3d7f785a43a021fe274dbbd9b, type: 3}
+  key: {fileID: 2774323842780581246, guid: 42a712e2991bb7a4b8d10fb7d4cadec6, type: 3}
+  coin: {fileID: 5161470898647669374, guid: ef1aaeb13c274d74989d92dda3ca9a41, type: 3}
   shootPos: {fileID: 737672323651111979}
 --- !u!50 &1706141847364749227
 Rigidbody2D:

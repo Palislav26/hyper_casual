@@ -28,6 +28,9 @@ public class PlayerController : MonoBehaviour
 
     public int maxHealth;
     int health;
+    public GameObject hearth1;
+    public GameObject hearth2;
+    public GameObject hearth3;
 
     public float maxWater = 100;
     public float currentWater;
@@ -58,8 +61,8 @@ public class PlayerController : MonoBehaviour
         ShootingParticles();
         KillPlayer();
 
-        coinText.text = "" + coinsNum;
-        keyText.text = "" + keysNum;
+        coinText.text = "Coins: " + coinsNum;
+        keyText.text = "Keys: " + keysNum;
 
         if(keysNum > 0)
         {
@@ -134,10 +137,12 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("enemy"))
         {
             health -= 1;
+            ShowHealth(health);
         }
         else if (collision.gameObject.CompareTag("EnemyBullet"))
         {
             health -= 1;
+            ShowHealth(health);
         }
         else if (collision.gameObject.CompareTag("Key"))
         {
@@ -172,6 +177,34 @@ public class PlayerController : MonoBehaviour
     {
         currentWater -= water;
         waterControl.SetWater(currentWater);
+    }
+
+    public void ShowHealth(int currentHealth)
+    {
+        if (currentHealth == 0)
+        {
+            hearth3.SetActive(false);
+            hearth2.SetActive(false);
+            hearth1.SetActive(false);
+        }
+        else if(currentHealth == 1)
+        {
+            hearth3.SetActive(false);
+            hearth2.SetActive(false);
+            hearth1.SetActive(true);
+        }
+        else if(currentHealth == 2)
+        {
+            hearth3.SetActive(false);
+            hearth2.SetActive(true);
+            hearth1.SetActive(true);
+        }        
+        else
+        {
+            hearth3.SetActive(true);
+            hearth2.SetActive(true);
+            hearth1.SetActive(true);
+        }
     }
 }
 

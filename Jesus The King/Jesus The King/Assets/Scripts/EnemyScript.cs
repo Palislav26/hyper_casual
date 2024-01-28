@@ -18,7 +18,7 @@ public class EnemyScript : MonoBehaviour
     public Transform shootPos;
     float timer;
 
-    public int randomNum;
+    private int randomNum;
 
     // Start is called before the first frame update
     void Start()
