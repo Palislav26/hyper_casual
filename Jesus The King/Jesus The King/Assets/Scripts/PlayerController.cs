@@ -160,7 +160,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                keysNum = keysNum - 1;
+                keysNum = keysNum - 1;                
             }           
         }
     }
