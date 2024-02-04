@@ -15,6 +15,7 @@ public class EnemyScript : MonoBehaviour
     public GameObject bullet;
     public GameObject key;
     public GameObject coin;
+    public GameObject bottle;
     public Transform shootPos;
     float timer;
 
@@ -85,10 +86,24 @@ public class EnemyScript : MonoBehaviour
         {
             Instantiate(coin, transform.position, Quaternion.identity);
         }
+        else if (randomNum == 4)
+        {
+            Instantiate(bottle, transform.position, Quaternion.identity);
+        }
+        else if (randomNum == 5)
+        {
+            Instantiate(bottle, transform.position, Quaternion.identity);
+            Instantiate(coin, transform.position, Quaternion.identity);
+        }
+        else if (randomNum == 6)
+        {
+            Instantiate(bottle, transform.position, Quaternion.identity);
+            Instantiate(key, transform.position, Quaternion.identity);
+        }
         else
         {
             Instantiate(key, transform.position, Quaternion.identity);
             Instantiate(coin, transform.position, Quaternion.identity);
-        }      
+        }
     }
 }

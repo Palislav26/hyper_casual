@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour
         {
             hasKey = true;
         }
+
     }
 
     void FixedUpdate()
@@ -151,6 +152,10 @@ public class PlayerController : MonoBehaviour
         else if (collision.gameObject.CompareTag("Coin"))
         {
             coinsNum = coinsNum + 1;
+        }
+        else if (collision.gameObject.CompareTag("Bottle"))
+        {
+            currentWater += 50;
         }
         else if (collision.gameObject.CompareTag("LockedWall"))
         {

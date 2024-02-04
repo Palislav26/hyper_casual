@@ -13,6 +13,7 @@ public class NaziBehavour : MonoBehaviour
 
     public GameObject key;
     public GameObject coin;
+    public GameObject bottle;
     private int randomNum;
 
     // Start is called before the first frame update
@@ -20,7 +21,7 @@ public class NaziBehavour : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         health = fullHealth;
-        randomNum = Random.Range(0, 4);
+        randomNum = Random.Range(0, 7);
     }
 
     // Update is called once per frame
@@ -75,6 +76,20 @@ public class NaziBehavour : MonoBehaviour
         {
             Instantiate(coin, transform.position, Quaternion.identity);
             Instantiate(coin, transform.position, Quaternion.identity);
+        }
+        else if (randomNum == 4)
+        {
+            Instantiate(bottle, transform.position, Quaternion.identity);            
+        }
+        else if (randomNum == 5)
+        {
+            Instantiate(bottle, transform.position, Quaternion.identity);
+            Instantiate(coin, transform.position, Quaternion.identity);
+        }
+        else if (randomNum == 6)
+        {
+            Instantiate(bottle, transform.position, Quaternion.identity);
+            Instantiate(key, transform.position, Quaternion.identity);
         }
         else
         {
