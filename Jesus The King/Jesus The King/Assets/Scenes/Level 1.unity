@@ -452,7 +452,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8ed0610ef13086b48a0d31089ba2e70a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6520,6 +6520,11 @@ Transform:
   m_Father: {fileID: 250086917}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1953509199 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1814245424903766211, guid: 256c5e14fdfd64443a6347f9c830871d, type: 3}
+  m_PrefabInstance: {fileID: 5809998427950427218}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1989775575
 GameObject:
   m_ObjectHideFlags: 0
@@ -7575,13 +7580,21 @@ PrefabInstance:
       value: Nazi Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 5809998428662836776, guid: 256c5e14fdfd64443a6347f9c830871d, type: 3}
-      propertyPath: bottle
+      propertyPath: slash
       value: 
-      objectReference: {fileID: 3167651567056475933, guid: 8beceb5c14462064883db076c16018a4, type: 3}
+      objectReference: {fileID: 7559824066314470751, guid: f041badf8d2a6ba4496f4732246d72e6, type: 3}
     - target: {fileID: 5809998428662836776, guid: 256c5e14fdfd64443a6347f9c830871d, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1151188293}
+    - target: {fileID: 5809998428662836776, guid: 256c5e14fdfd64443a6347f9c830871d, type: 3}
+      propertyPath: attackPos
+      value: 
+      objectReference: {fileID: 1953509199}
+    - target: {fileID: 5809998428662836776, guid: 256c5e14fdfd64443a6347f9c830871d, type: 3}
+      propertyPath: rangeToAttack
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5809998428662836782, guid: 256c5e14fdfd64443a6347f9c830871d, type: 3}
       propertyPath: m_RootOrder
       value: 3

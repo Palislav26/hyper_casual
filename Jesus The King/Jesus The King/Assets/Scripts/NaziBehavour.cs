@@ -16,6 +16,11 @@ public class NaziBehavour : MonoBehaviour
     public GameObject bottle;
     private int randomNum;
 
+    float timer;
+    public int rangeToAttack;
+    public GameObject slash;
+    public Transform attackPos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,10 +39,34 @@ public class NaziBehavour : MonoBehaviour
     {
 
         if (Vector3.Distance(transform.position, player.transform.position - transform.position) < rangeToChace)
-        {          
+        {
+            if (Vector3.Distance(transform.position, player.transform.position - transform.position) < rangeToAttack)
+            {
                 transform.position = rb.position;
-                      
-                transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);            
+
+                timer += Time.deltaTime;
+                if (timer > 1f)
+                {
+                    timer = 0;
+                    Attack();
+                }
+            }
+            else if (Vector3.Distance(transform.position, player.transform.position - transform.position) > rangeToAttack)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+
+                if (Vector3.Distance(transform.position, player.transform.position - transform.position) < rangeToAttack)
+                {
+                    transform.position = rb.position;
+
+                    timer += Time.deltaTime;
+                    if (timer > 1f)
+                    {
+                        timer = 0;
+                        Attack();
+                    }
+                }
+            }
         }
     }
 
@@ -55,6 +84,11 @@ public class NaziBehavour : MonoBehaviour
         {
             health -= 1;
         }
+    }
+
+    void Attack()
+    {
+        Instantiate(slash, attackPos.position, Quaternion.identity);
     }
 
     private void OnDestroy()
