@@ -3999,7 +3999,7 @@ Tilemap:
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -5, y: -6, z: 0}
-  m_Size: {x: 14, y: 32, z: 1}
+  m_Size: {x: 19, y: 32, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -6977,6 +6977,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ranged Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1706141847364749143, guid: 69e5f220cf1d71e459f03425bc142e8b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1706141847364749224, guid: 69e5f220cf1d71e459f03425bc142e8b, type: 3}
       propertyPath: bottle
       value: 
@@ -7534,6 +7538,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3092772480803019071, guid: 2ab73324eb0ae7843a9c53047654a654, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3092772481230906001, guid: 2ab73324eb0ae7843a9c53047654a654, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -7579,6 +7587,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nazi Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5809998428662836773, guid: 256c5e14fdfd64443a6347f9c830871d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5809998428662836776, guid: 256c5e14fdfd64443a6347f9c830871d, type: 3}
       propertyPath: slash
       value: 
@@ -7593,7 +7605,7 @@ PrefabInstance:
       objectReference: {fileID: 1953509199}
     - target: {fileID: 5809998428662836776, guid: 256c5e14fdfd64443a6347f9c830871d, type: 3}
       propertyPath: rangeToAttack
-      value: 1
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 5809998428662836782, guid: 256c5e14fdfd64443a6347f9c830871d, type: 3}
       propertyPath: m_RootOrder

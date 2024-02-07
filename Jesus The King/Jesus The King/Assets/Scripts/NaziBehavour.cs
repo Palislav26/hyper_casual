@@ -17,7 +17,7 @@ public class NaziBehavour : MonoBehaviour
     private int randomNum;
 
     float timer;
-    public int rangeToAttack;
+    public float rangeToAttack;
     public GameObject slash;
     public Transform attackPos;
 
@@ -33,11 +33,12 @@ public class NaziBehavour : MonoBehaviour
     void Update()
     {
         KillNazi();
+
+        
     }
 
     void FixedUpdate()
     {
-
         if (Vector3.Distance(transform.position, player.transform.position - transform.position) < rangeToChace)
         {
             if (Vector3.Distance(transform.position, player.transform.position - transform.position) < rangeToAttack)
@@ -51,23 +52,11 @@ public class NaziBehavour : MonoBehaviour
                     Attack();
                 }
             }
-            else if (Vector3.Distance(transform.position, player.transform.position - transform.position) > rangeToAttack)
+            else //if (Vector3.Distance(transform.position, player.transform.position - transform.position) > rangeToAttack)
             {
                 transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
-
-                if (Vector3.Distance(transform.position, player.transform.position - transform.position) < rangeToAttack)
-                {
-                    transform.position = rb.position;
-
-                    timer += Time.deltaTime;
-                    if (timer > 1f)
-                    {
-                        timer = 0;
-                        Attack();
-                    }
-                }
             }
-        }
+        }                                     
     }
 
     void KillNazi()
