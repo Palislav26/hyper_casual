@@ -7605,7 +7605,7 @@ PrefabInstance:
       objectReference: {fileID: 1953509199}
     - target: {fileID: 5809998428662836776, guid: 256c5e14fdfd64443a6347f9c830871d, type: 3}
       propertyPath: rangeToAttack
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5809998428662836782, guid: 256c5e14fdfd64443a6347f9c830871d, type: 3}
       propertyPath: m_RootOrder

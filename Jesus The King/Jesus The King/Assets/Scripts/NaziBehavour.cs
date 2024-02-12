@@ -41,21 +41,22 @@ public class NaziBehavour : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, player.transform.position - transform.position) < rangeToChace)
         {
+            
             if (Vector3.Distance(transform.position, player.transform.position - transform.position) < rangeToAttack)
             {
-                transform.position = rb.position;
-
+                
                 timer += Time.deltaTime;
                 if (timer > 1f)
                 {
-                    timer = 0;
                     Attack();
+                    timer = 0;
                 }
             }
-            else //if (Vector3.Distance(transform.position, player.transform.position - transform.position) > rangeToAttack)
+            else if (Vector3.Distance(transform.position, player.transform.position - transform.position) < rangeToChace)
             {
                 transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
             }
+            
         }                                     
     }
 
@@ -77,6 +78,7 @@ public class NaziBehavour : MonoBehaviour
 
     void Attack()
     {
+        transform.position = rb.position;
         Instantiate(slash, attackPos.position, Quaternion.identity);
     }
 
