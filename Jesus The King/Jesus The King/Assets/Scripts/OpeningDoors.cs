@@ -7,6 +7,7 @@ public class OpeningDoors : MonoBehaviour
     public PlayerController player;
     public GameObject openDoors;
     public GameObject closedDoors;
+    public GameObject hornaListaDveri;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -19,5 +20,6 @@ public class OpeningDoors : MonoBehaviour
     private void OnDisable()
     {
         openDoors.SetActive(true);
+        hornaListaDveri.SetActive(true);
     }
 }

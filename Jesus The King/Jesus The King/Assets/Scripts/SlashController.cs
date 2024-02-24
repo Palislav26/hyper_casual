@@ -29,7 +29,7 @@ public class SlashController : MonoBehaviour
 
     void DestroySlash()
     {
-        Destroy(gameObject, 0.2f);
+        Destroy(gameObject, 1f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

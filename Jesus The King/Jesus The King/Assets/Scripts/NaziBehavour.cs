@@ -37,8 +37,9 @@ public class NaziBehavour : MonoBehaviour
         
     }
 
-    void FixedUpdate()
+    void FixedUpdate() // try to fix this
     {
+        
         if (Vector3.Distance(transform.position, player.transform.position - transform.position) < rangeToChace)
         {
             
@@ -57,7 +58,7 @@ public class NaziBehavour : MonoBehaviour
                 transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
             }
             
-        }                                     
+        }       
     }
 
     void KillNazi()
