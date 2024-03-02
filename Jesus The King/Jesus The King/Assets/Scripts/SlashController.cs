@@ -28,7 +28,7 @@ public class SlashController : MonoBehaviour
     }
 
     void DestroySlash()
-    {
+    {      
         Destroy(gameObject, 1f);
     }
 

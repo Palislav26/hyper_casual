@@ -139,9 +139,9 @@ MonoBehaviour:
   key: {fileID: 2774323842780581246, guid: 42a712e2991bb7a4b8d10fb7d4cadec6, type: 3}
   coin: {fileID: 5161470898647669374, guid: ef1aaeb13c274d74989d92dda3ca9a41, type: 3}
   bottle: {fileID: 3167651567056475933, guid: 8beceb5c14462064883db076c16018a4, type: 3}
-  rangeToAttack: 0
-  slash: {fileID: 0}
-  attackPos: {fileID: 0}
+  rangeToAttack: 1
+  slash: {fileID: 7559824066314470751, guid: f041badf8d2a6ba4496f4732246d72e6, type: 3}
+  attackPos: {fileID: 1814245424903766211}
 --- !u!50 &5809998428662836779
 Rigidbody2D:
   serializedVersion: 4
