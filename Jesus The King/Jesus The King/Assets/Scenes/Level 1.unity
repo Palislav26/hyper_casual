@@ -7672,10 +7672,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1151188293}
-    - target: {fileID: 5809998428662836776, guid: 256c5e14fdfd64443a6347f9c830871d, type: 3}
-      propertyPath: rangeToChace
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 5809998428662836782, guid: 256c5e14fdfd64443a6347f9c830871d, type: 3}
       propertyPath: m_RootOrder
       value: 3
