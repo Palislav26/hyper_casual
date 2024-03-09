@@ -21,6 +21,9 @@ public class NaziBehavour : MonoBehaviour
     public GameObject slash;
     public Transform attackPos;
 
+    private float shootTimer = 0f;
+    private float shootInterval = 2f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,10 +37,41 @@ public class NaziBehavour : MonoBehaviour
     {
         KillNazi();
 
-        
+        if (true)
+        {
+            float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+
+            if (distanceToPlayer < rangeToChace)
+            {
+                // Move towards the player
+                transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+
+                if (distanceToPlayer < rangeToAttack)
+                {
+                    // Stop chasing and shoot
+                    transform.position = transform.position;
+
+                    // Update the shoot timer
+                    shootTimer += Time.deltaTime;
+
+                    if (shootTimer >= shootInterval)
+                    {
+                        Attack();
+                        shootTimer = 0f; // Reset the timer after shooting
+                    }
+                }
+                else
+                {
+                    // Player is not within shooting range, resume chasing
+                    // Reset the shoot timer if needed
+                }
+            }
+        }
+
+
     }
 
-    void FixedUpdate() // try to fix this
+    /*void FixedUpdate() // try to fix this
     {
         
         if (Vector3.Distance(transform.position, player.transform.position - transform.position) < rangeToChace)
@@ -59,7 +93,7 @@ public class NaziBehavour : MonoBehaviour
             }
             
         }       
-    }
+    }*/
 
     void KillNazi()
     {
@@ -79,7 +113,7 @@ public class NaziBehavour : MonoBehaviour
 
     void Attack()
     {
-        transform.position = rb.position;
+        transform.position = transform.position;
         Instantiate(slash, attackPos.position, Quaternion.identity);
     }
 

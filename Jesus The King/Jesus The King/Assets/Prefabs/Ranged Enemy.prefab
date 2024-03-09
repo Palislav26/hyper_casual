@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e3e7d76cbf7fd41b8595a36d352b56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangeToChace: 10
+  rangeToChace: 8
   rangeToShoot: 3
   moveSpeed: 0.75
   player: {fileID: 0}
@@ -109,6 +109,7 @@ MonoBehaviour:
   bullet: {fileID: 1525792628941454931, guid: ec3a58b3d7f785a43a021fe274dbbd9b, type: 3}
   key: {fileID: 2774323842780581246, guid: 42a712e2991bb7a4b8d10fb7d4cadec6, type: 3}
   coin: {fileID: 5161470898647669374, guid: ef1aaeb13c274d74989d92dda3ca9a41, type: 3}
+  bottle: {fileID: 3167651567056475933, guid: 8beceb5c14462064883db076c16018a4, type: 3}
   shootPos: {fileID: 737672323651111979}
 --- !u!50 &1706141847364749227
 Rigidbody2D:

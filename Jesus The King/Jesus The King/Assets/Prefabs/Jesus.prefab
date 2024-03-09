@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3092772479605272425}
   - component: {fileID: 3092772479605272427}
   - component: {fileID: 3092772479605272424}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Holy Water Ps 3
   m_TagString: HolyWater
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3092772479605272430}
   serializedVersion: 8
-  lengthInSec: 0.1
+  lengthInSec: 0.2
   simulationSpeed: 3
   stopAction: 0
   cullingMode: 0
@@ -169,7 +169,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -285,7 +285,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -737,7 +737,7 @@ ParticleSystem:
     m_UseMeshMaterialIndex: 0
     m_UseMeshColors: 1
     alignToDirection: 0
-    m_Texture: {fileID: 2800000, guid: 5b56cb1a6bd97f348b3a3b6f875aafd6, type: 3}
+    m_Texture: {fileID: 2800000, guid: 9abde3a1f0e789a41994f07dcad3ffe3, type: 3}
     m_TextureClipChannel: 3
     m_TextureClipThreshold: 0
     m_TextureUVChannel: 0
@@ -867,7 +867,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 50
+      scalar: 100
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -920,7 +920,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 100
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4822,7 +4822,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3092772479700840947}
   - component: {fileID: 3092772479700840946}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FirePoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4868,7 +4868,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3092772480533274912}
   - component: {fileID: 3092772480533274915}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FirePoint4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4904,6 +4904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 848136980835865807, guid: f34806a88bd91ff46bb172b04690c99e, type: 3}
   firePoint4: {fileID: 3092772480533274913}
+  playerController: {fileID: 3092772480803019070}
 --- !u!1 &3092772480664149128
 GameObject:
   m_ObjectHideFlags: 0
@@ -4915,7 +4916,7 @@ GameObject:
   - component: {fileID: 3092772480664149131}
   - component: {fileID: 3092772480664149125}
   - component: {fileID: 3092772480664149130}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Holy Water Ps 4
   m_TagString: HolyWater
   m_Icon: {fileID: 0}
@@ -4945,7 +4946,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3092772480664149128}
   serializedVersion: 8
-  lengthInSec: 0.1
+  lengthInSec: 0.2
   simulationSpeed: 3
   stopAction: 0
   cullingMode: 0
@@ -5073,7 +5074,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5189,7 +5190,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5641,7 +5642,7 @@ ParticleSystem:
     m_UseMeshMaterialIndex: 0
     m_UseMeshColors: 1
     alignToDirection: 0
-    m_Texture: {fileID: 2800000, guid: 5b56cb1a6bd97f348b3a3b6f875aafd6, type: 3}
+    m_Texture: {fileID: 2800000, guid: 9abde3a1f0e789a41994f07dcad3ffe3, type: 3}
     m_TextureClipChannel: 3
     m_TextureClipThreshold: 0
     m_TextureUVChannel: 0
@@ -5771,7 +5772,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 50
+      scalar: 100
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -5824,7 +5825,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 100
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -9726,7 +9727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3092772480691058383}
   - component: {fileID: 3092772480691058382}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FirePoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9773,7 +9774,7 @@ GameObject:
   - component: {fileID: 3092772480715014423}
   - component: {fileID: 3092772480715014417}
   - component: {fileID: 3092772480715014422}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Holy Water Ps 2
   m_TagString: HolyWater
   m_Icon: {fileID: 0}
@@ -9803,7 +9804,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3092772480715014420}
   serializedVersion: 8
-  lengthInSec: 0.1
+  lengthInSec: 0.2
   simulationSpeed: 3
   stopAction: 0
   cullingMode: 0
@@ -9931,7 +9932,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -10047,7 +10048,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -10499,7 +10500,7 @@ ParticleSystem:
     m_UseMeshMaterialIndex: 0
     m_UseMeshColors: 1
     alignToDirection: 0
-    m_Texture: {fileID: 2800000, guid: 5b56cb1a6bd97f348b3a3b6f875aafd6, type: 3}
+    m_Texture: {fileID: 2800000, guid: 9abde3a1f0e789a41994f07dcad3ffe3, type: 3}
     m_TextureClipChannel: 3
     m_TextureClipThreshold: 0
     m_TextureUVChannel: 0
@@ -10629,7 +10630,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 50
+      scalar: 100
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -10682,7 +10683,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 100
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -14587,7 +14588,7 @@ GameObject:
   - component: {fileID: 3092772480803019070}
   - component: {fileID: 3092772480803019067}
   - component: {fileID: 3092772480803019066}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Jesus
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -14603,7 +14604,7 @@ Transform:
   m_GameObject: {fileID: 3092772480803019071}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.13, y: -1.8012, z: 0}
-  m_LocalScale: {x: 0.14757082, y: 0.15504606, z: 1}
+  m_LocalScale: {x: 0.115, y: 0.12, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3092772481230906002}
@@ -14657,7 +14658,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: cac8eae2c0186a2499971f2bc73e5ee4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -14687,7 +14688,20 @@ MonoBehaviour:
   ps2: {fileID: 3092772480715014417}
   ps3: {fileID: 3092772479605272427}
   ps4: {fileID: 3092772480664149125}
+  f1: {fileID: 3092772480691058380}
+  f2: {fileID: 3092772479700840944}
+  f3: {fileID: 3092772481285569380}
+  f4: {fileID: 3092772480533274913}
+  coinText: {fileID: 0}
+  keyText: {fileID: 0}
   maxHealth: 3
+  hearth1: {fileID: 0}
+  hearth2: {fileID: 0}
+  hearth3: {fileID: 0}
+  maxWater: 100
+  currentWater: 0
+  waterControl: {fileID: 0}
+  hasKey: 0
 --- !u!50 &3092772480803019067
 Rigidbody2D:
   serializedVersion: 4
@@ -14746,7 +14760,7 @@ GameObject:
   - component: {fileID: 3092772481230906002}
   - component: {fileID: 3092772481230906003}
   - component: {fileID: 3092772481230906000}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Holy Water Ps 1
   m_TagString: HolyWater
   m_Icon: {fileID: 0}
@@ -14904,7 +14918,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -15020,7 +15034,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -15472,7 +15486,7 @@ ParticleSystem:
     m_UseMeshMaterialIndex: 0
     m_UseMeshColors: 1
     alignToDirection: 0
-    m_Texture: {fileID: 2800000, guid: 5b56cb1a6bd97f348b3a3b6f875aafd6, type: 3}
+    m_Texture: {fileID: 2800000, guid: c58527079c2d1654c8e3e8b9ba392700, type: 3}
     m_TextureClipChannel: 3
     m_TextureClipThreshold: 0
     m_TextureUVChannel: 0
@@ -15602,7 +15616,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 50
+      scalar: 100
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -15655,7 +15669,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 100
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -19557,7 +19571,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3092772481285569383}
   - component: {fileID: 3092772481285569382}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FirePoint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
