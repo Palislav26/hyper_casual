@@ -8,4 +8,4 @@ Shoot, jump, and throw grenades at waves of enemies determined to take you down.
 - Shooting:      Left mouse button
 - Granade:       Right mouse button
 - Jump:          Space
-- Swap weapons:  Number key 1 or 2
+- Swap weapons:  Number key 1 & 2
